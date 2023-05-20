@@ -4,28 +4,28 @@
     "href": "README.html#what-is-datadex",
     "title": "Datadex",
     "section": "🤔 What is Datadex?",
-    "text": "🤔 What is Datadex?\n\n\n\nCI\n\n\nDatadex explores how people could collaborate on Open Data using the principles and tooling from the Modern/Open Data Stack. Using tools like dbt and DuckDB you can transform data by simply writing select statements or importing someone else’s model.sql and building on top of it!\n\n💡 Features\n\nOpen: Play well with the rest of the ecosystem.\nModular: Each tool can be replaced and extended (adapters). Works well in many environments.\nFlexible. Run it from your laptop, in a cluster, or from the browser.\nData as Code. Version your data as code thanks to dbt! Publish and share your models for other people to build on top of them. Data, reproducible and accessible!\nModern: Supports types, tests, materialized views, and more. Don’t build new tools to work with Open Data, build bridges with the existing ones."
+    "text": "🤔 What is Datadex?\n\n\n\n\n\nDatadex explores how people could collaborate on Open Data using the principles and tooling from the Modern/Open Data Stack. Using tools like dbt and DuckDB you can transform data by simply writing select statements or importing someone else’s model.sql and building on top of it!\n\n💡 Features\n\nOpen: Play well with the rest of the ecosystem.\nModular: Each tool can be replaced and extended (adapters). Works well in many environments.\nFlexible. Run it from your laptop, in a cluster, or from the browser.\nData as Code. Version your data as code thanks to dbt! Publish and share your models for other people to build on top of them. Data, reproducible and accessible!\nModern: Supports types, tests, materialized views, and more. Don’t build new tools to work with Open Data, build bridges with the existing ones."
   },
   {
     "objectID": "README.html#usage",
     "href": "README.html#usage",
     "title": "Datadex",
     "section": "💻 Usage",
-    "text": "💻 Usage\nThis is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:\n\nSetup dependencies with make deps.\nBuild your dbt models and save them to Parquet files with make run.\nExplore the data with make rill.\n\n\n\n\nrill"
+    "text": "💻 Usage\nThis is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:\n\nSetup dependencies with make deps.\nBuild your dbt models and save them to Parquet files with make run.\nExplore the data with make rill."
   },
   {
     "objectID": "README.html#what-can-you-do-with-datadex",
     "href": "README.html#what-can-you-do-with-datadex",
     "title": "Datadex",
     "section": "🚀 What can you do with Datadex?",
-    "text": "🚀 What can you do with Datadex?\n\nModel local and remote datasets with dbt.\nUse any of the other awesome dbt features like tests and docs. Docs are automatically generated and published on GitHub Pages.\n\n\n\n\ndocs"
+    "text": "🚀 What can you do with Datadex?\n\nModel local and remote datasets with dbt.\nUse any of the other awesome dbt features like tests and docs. Docs are automatically generated and published on GitHub Pages."
   },
   {
     "objectID": "README.html#setup",
     "href": "README.html#setup",
     "title": "Datadex",
     "section": "⚙️ Setup",
-    "text": "⚙️ Setup\nThe fastest way to start using Datadex is via VSCode Remote Containers. Once inside the develpment environment, you’ll only need to run make deps.\n\n\n\nOpen in GitHub Codespaces\n\n\nPS: The development environment can also run in your browser thanks to GitHub Codespaces."
+    "text": "⚙️ Setup\nThe fastest way to start using Datadex is via VSCode Remote Containers. Once inside the develpment environment, you’ll only need to run make deps.\n\n\n\n\n\nPS: The development environment can also run in your browser thanks to GitHub Codespaces."
   },
   {
     "objectID": "README.html#motivation",
@@ -46,7 +46,14 @@
     "href": "notebooks/pyscript.html",
     "title": "PyScript",
     "section": "",
-    "text": "So… this is the current date and time, computed by Python running in your browser:\n\n from datetime import datetime; now = datetime.now(); display(now.strftime(\"%m/%d/%Y, %H:%M:%S\"))"
+    "text": "[splashscreen]\n        enabled = false\nSo… this is the current date and time, computed by Python running in your browser!\nfrom datetime import datetime; now = datetime.now(); display(now.strftime(\"%m/%d/%Y, %H:%M:%S\"));"
+  },
+  {
+    "objectID": "notebooks/pyscript.html#jupyter-repl",
+    "href": "notebooks/pyscript.html#jupyter-repl",
+    "title": "PyScript",
+    "section": "Jupyter REPL",
+    "text": "Jupyter REPL\nYou can also have an entire Jupyter REPL running in your browser, with the ability to run arbitrary Python code!\nGo ahead and try this out:\nfrom matplotlib import pyplot as plt\nimport numpy as np\nx, y, scale = np.random.randn(3, 100)\nfig, ax = plt.subplots()\nax.scatter(x=x, y=y, c=scale, s=np.abs(scale) * 500)\nax.set(title=\"Some random data!\")\nplt.show()"
   },
   {
     "objectID": "notebooks/quarto.html",
