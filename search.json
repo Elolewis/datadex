@@ -61,5 +61,12 @@
     "title": "Quarto",
     "section": "Dynamic Graphs",
     "text": "Dynamic Graphs\n\nimport altair as alt\nimport pandas as pd\nimport numpy as np\n\nnp.random.seed(42)\nsource = pd.DataFrame(\n    np.cumsum(np.random.randn(100, 3), 0).round(2),\n    columns=[\"A\", \"B\", \"C\"],\n    index=pd.RangeIndex(100, name=\"x\"),\n)\nsource = source.reset_index().melt(\"x\", var_name=\"category\", value_name=\"y\")\n\n# Create a selection that chooses the nearest point & selects based on x-value\nnearest = alt.selection_point(nearest=True, on=\"mouseover\", fields=[\"x\"], empty=False)\n\n# The basic line\nline = (\n    alt.Chart(source)\n    .mark_line(interpolate=\"basis\")\n    .encode(x=\"x:Q\", y=\"y:Q\", color=\"category:N\")\n)\n\n# Transparent selectors across the chart. This is what tells us\n# the x-value of the cursor\nselectors = (\n    alt.Chart(source)\n    .mark_point()\n    .encode(\n        x=\"x:Q\",\n        opacity=alt.value(0),\n    )\n    .add_params(nearest)\n)\n\n# Draw points on the line, and highlight based on selection\npoints = line.mark_point().encode(\n    opacity=alt.condition(nearest, alt.value(1), alt.value(0))\n)\n\n# Draw text labels near the points, and highlight based on selection\ntext = line.mark_text(align=\"left\", dx=5, dy=-5).encode(\n    text=alt.condition(nearest, \"y:Q\", alt.value(\" \"))\n)\n\n# Draw a rule at the location of the selection\nrules = (\n    alt.Chart(source)\n    .mark_rule(color=\"gray\")\n    .encode(\n        x=\"x:Q\",\n    )\n    .transform_filter(nearest)\n)\n\n# Put the five layers into a chart and bind the data\nalt.layer(line, selectors, points, rules, text).properties(width=600, height=300)\n\n\n\n\n\n\n\nYou can even embed a whole dataset and interact with it Tabelau style.\n\nimport pygwalker as pyg\n\npyg.walk(source)"
+  },
+  {
+    "objectID": "notebooks/pyscript.html",
+    "href": "notebooks/pyscript.html",
+    "title": "PyScript",
+    "section": "",
+    "text": "So… this is the current date and time, computed by Python running in your browser:\n\n from datetime import datetime; now = datetime.now(); display(now.strftime(\"%m/%d/%Y, %H:%M:%S\"))"
   }
 ]

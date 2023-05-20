@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://davidgasquez.github.io/datadex/README.html</loc>
-    <lastmod>2023-05-19T16:35:01.779Z</lastmod>
+    <lastmod>2023-05-20T10:36:24.257Z</lastmod>
   </url>
   <url>
     <loc>https://davidgasquez.github.io/datadex/notebooks/quarto.html</loc>
-    <lastmod>2023-05-19T16:35:02.326Z</lastmod>
+    <lastmod>2023-05-20T10:36:24.800Z</lastmod>
+  </url>
+  <url>
+    <loc>https://davidgasquez.github.io/datadex/notebooks/pyscript.html</loc>
+    <lastmod>2023-05-20T10:36:25.000Z</lastmod>
   </url>
 </urlset>

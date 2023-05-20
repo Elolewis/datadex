@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Datadex – readme</title>
+<title>Datadex - PyScript</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,6 +59,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+<script defer="" src="https://pyscript.net/latest/pyscript.js"></script>
 
 
 </head>
@@ -70,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Datadex</span>
     </a>
   </div>
@@ -81,19 +83,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./README.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../README.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./notebooks/quarto.html" rel="" target="">
+    <a class="nav-link" href="../notebooks/quarto.html" rel="" target="">
  <span class="menu-text">Quarto Example</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./notebooks/pyscript.html" rel="" target="">
+    <a class="nav-link active" href="../notebooks/pyscript.html" rel="" target="" aria-current="page">
  <span class="menu-text">Pyscript</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs" rel="" target="">
+    <a class="nav-link" href="../docs" rel="" target="">
  <span class="menu-text">dbt Docs</span></a>
   </li>  
 </ul>
@@ -111,95 +113,29 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-
-<!---
-
-
----
-output-file: index
----
-
-
---->
-<p align="center">
-</p><p><img alt="Logo" src="https://user-images.githubusercontent.com/1682202/160557212-c23c2bea-4179-4223-abfe-90f4a92e8aaa.png#gh-light-mode-only" width="400"> <img alt="Logo" src="https://user-images.githubusercontent.com/1682202/160557880-ebd4d53f-5ed8-40d2-b20c-7da90443f389.png#gh-dark-mode-only" width="400"></p>
-<h4 align="center" class="anchored">
-Collaborate on Open Data using moderns tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org">DuckDB</a>
-</h4>
-<p></p>
-<section id="what-is-datadex" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-datadex">🤔 What is Datadex?</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://github.com/davidgasquez/datadex/actions/workflows/ci.yml"><img src="https://github.com/davidgasquez/datadex/actions/workflows/ci.yml/badge.svg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">CI</figcaption>
-</figure>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PyScript</h1>
 </div>
-<p>Datadex explores how people could collaborate on Open Data using the principles and tooling from the Modern/Open Data Stack. Using tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org/">DuckDB</a> you can transform data by simply writing <code>select</code> statements or importing someone else’s <code>model.sql</code> and building on top of it!</p>
-<section id="features" class="level3">
-<h3 class="anchored" data-anchor-id="features">💡 Features</h3>
-<ul>
-<li><strong>Open</strong>: Play well with the rest of the ecosystem.</li>
-<li><strong>Modular</strong>: Each tool can be replaced and extended (adapters). Works well in many environments.</li>
-<li><strong>Flexible</strong>. Run it from your laptop, in a cluster, or from the browser.</li>
-<li><strong>Data as Code</strong>. Version your data as code thanks to <code>dbt</code>! Publish and share your models for other people to build on top of them. Data, reproducible and accessible!</li>
-<li><strong>Modern</strong>: Supports types, tests, materialized views, and more. Don’t build new tools to work with Open Data, build bridges with the existing ones.</li>
-</ul>
-</section>
-</section>
-<section id="usage" class="level2">
-<h2 class="anchored" data-anchor-id="usage">💻 Usage</h2>
-<p>This is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:</p>
-<ol type="1">
-<li>Setup dependencies with <code>make deps</code>.</li>
-<li>Build your dbt models and save them to Parquet files with <code>make run</code>.</li>
-<li>Explore the data with <code>make rill</code>.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://user-images.githubusercontent.com/1682202/195888267-ab119222-9269-4e00-98a9-8cf3a6405252.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">rill</figcaption>
-</figure>
-</div>
-</section>
-<section id="what-can-you-do-with-datadex" class="level2">
-<h2 class="anchored" data-anchor-id="what-can-you-do-with-datadex">🚀 What can you do with Datadex?</h2>
-<ul>
-<li>Model local and remote datasets with <code>dbt</code>.</li>
-<li>Use any of the other awesome <code>dbt</code> features like <code>tests</code> and <code>docs</code>. <a href="https://davidgasquez.github.io/datadex">Docs are automatically generated and published on GitHub Pages</a>.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://user-images.githubusercontent.com/1682202/195890290-a27498dd-1d7b-4613-ba9a-4848fb3001be.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">docs</figcaption>
-</figure>
-</div>
-</section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">⚙️ Setup</h2>
-<p>The fastest way to start using Datadex is via <a href="https://code.visualstudio.com/docs/remote/containers">VSCode Remote Containers</a>. Once inside the develpment environment, you’ll only need to run <code>make deps</code>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://codespaces.new/davidgasquez/datadex"><img src="https://github.com/codespaces/badge.svg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Open in GitHub Codespaces</figcaption>
-</figure>
-</div>
-<p>PS: The development environment can also run in your browser thanks to GitHub Codespaces.</p>
-</section>
-<section id="motivation" class="level2">
-<h2 class="anchored" data-anchor-id="motivation">🎯 Motivation</h2>
-<p>This small project was created after <a href="https://publish.obsidian.md/davidgasquez/Open+Data">thinking how an Open Data Protocol could look like</a>! I just wanted to stitch together a few open source technologies and see what could they do.</p>
-</section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">👏 Acknowledgements</h2>
-<ul>
-<li>This proof of concept was created thanks to open source projects like <a href="https://www.duckdb.org/">DuckDB</a> and <a href="https://getdbt.com">dbt</a>.</li>
-<li>Datadex name was inspired by <a href="https://juan.benet.ai/blog/2014-03-11-discussion-scienceexchange/">Juan Benet awesome <code>data</code> projects</a>.</li>
-</ul>
 
 
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>So… this is the current date and time, computed by Python running in your browser:</p>
+<section class="pyscript">
+<py-script> from datetime import datetime; now = datetime.now(); display(now.strftime("%m/%d/%Y, %H:%M:%S")) </py-script>
 </section>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -439,5 +375,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/davidgasquez/datadex/edit/main/README.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/davidgasquez/datadex/blob/main/notebooks/pyscript.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
