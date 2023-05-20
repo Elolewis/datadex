@@ -1,43 +1,50 @@
 [
   {
+    "objectID": "README.html",
+    "href": "README.html",
+    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
+    "section": "",
+    "text": "Collaborate on Open Data using modern tools like dbt and DuckDB"
+  },
+  {
     "objectID": "README.html#what-is-datadex",
     "href": "README.html#what-is-datadex",
-    "title": "Datadex",
+    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
     "section": "🤔 What is Datadex?",
     "text": "🤔 What is Datadex?\n\n\n\n\n\nDatadex is a set of tools and frameworks that allow everyone to collaborate on Open Data using principles from the Modern/Open Data Stack. With the help of tools like dbt and DuckDB you can transform data by writing select statements.\n\n💡 Features\n\nOpen: Play well with the rest of the ecosystem.\nModular: Each tool can be replaced and extended (adapters). Works well in many environments.\nFlexible. Run it from your laptop, in a cluster, or from the browser.\nData as Code. Version your data as code thanks to dbt! Publish and share your models for other people to build on top of them. Data, reproducible and accessible!\nModern: Supports types, tests, materialized views, and more. Don’t build new tools to work with Open Data, build bridges with the existing ones."
   },
   {
     "objectID": "README.html#usage",
     "href": "README.html#usage",
-    "title": "Datadex",
+    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
     "section": "💻 Usage",
     "text": "💻 Usage\nThis is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:\n\nSetup dependencies with make deps.\nBuild your dbt models and save them to Parquet files with make run.\nExplore the data with make rill."
   },
   {
     "objectID": "README.html#what-can-you-do-with-datadex",
     "href": "README.html#what-can-you-do-with-datadex",
-    "title": "Datadex",
+    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
     "section": "🚀 What can you do with Datadex?",
     "text": "🚀 What can you do with Datadex?\n\nModel local and remote datasets with dbt.\nUse any of the other awesome dbt features like tests and docs. Docs are automatically generated and published on GitHub Pages."
   },
   {
     "objectID": "README.html#setup",
     "href": "README.html#setup",
-    "title": "Datadex",
+    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
     "section": "⚙️ Setup",
     "text": "⚙️ Setup\nThe fastest way to start using Datadex is via VSCode Remote Containers. Once inside the develpment environment, you’ll only need to run make deps.\n\n\n\n\n\nPS: The development environment can also run in your browser thanks to GitHub Codespaces."
   },
   {
     "objectID": "README.html#motivation",
     "href": "README.html#motivation",
-    "title": "Datadex",
+    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
     "section": "🎯 Motivation",
     "text": "🎯 Motivation\nThis small project was created after thinking how an Open Data Protocol could look like! I just wanted to stitch together a few open source technologies and see what could they do."
   },
   {
     "objectID": "README.html#acknowledgements",
     "href": "README.html#acknowledgements",
-    "title": "Datadex",
+    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
     "section": "👏 Acknowledgements",
     "text": "👏 Acknowledgements\n\nThis proof of concept was created thanks to open source projects like DuckDB and dbt.\nDatadex name was inspired by Juan Benet awesome data projects."
   },
