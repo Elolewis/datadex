@@ -70,6 +70,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="https://em-content.zobj.net/thumbs/120/google/350/package_1f4e6.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Datadex</span>
     </a>
@@ -80,22 +83,25 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./README.html" rel="" target="" aria-current="page">
- <span class="menu-text">Home</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-notebooks" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Notebooks</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-notebooks">    
+        <li>
+    <a class="dropdown-item" href="./notebooks/quarto.html" rel="" target="">
+ <span class="dropdown-text">Quarto Example</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./notebooks/quarto.html" rel="" target="">
- <span class="menu-text">Quarto Example</span></a>
+        <li>
+    <a class="dropdown-item" href="./notebooks/pyscript.html" rel="" target="">
+ <span class="dropdown-text">Pyscript</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./notebooks/pyscript.html" rel="" target="">
- <span class="menu-text">Pyscript</span></a>
+        <li>
+    <a class="dropdown-item" href="./notebooks/climate.html" rel="" target="">
+ <span class="dropdown-text">Climate</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./notebooks/climate.html" rel="" target="">
- <span class="menu-text">Climate</span></a>
-  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./docs" rel="" target="">
  <span class="menu-text">dbt Docs</span></a>
@@ -117,30 +123,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<!---
-
-
----
-output-file: index
----
-
-
---->
 <p align="center">
-</p><h1 style="font-size:300em;" align="center">
-𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗
+</p><h1 style="font-size:80px; font-weight: 800;" align="center">
+D A T A D E X
 </h1>
 <p align="center">
 Collaborate on Open Data using modern tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org">DuckDB</a>
 </p>
 <p></p>
-<section id="what-is-datadex" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-datadex">🤔 What is Datadex?</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://github.com/davidgasquez/datadex/actions/workflows/ci.yml"><img src="https://github.com/davidgasquez/datadex/actions/workflows/ci.yml/badge.svg" class="img-fluid figure-img"></a></p>
-</figure>
+<div data-align="center">
+<p><img alt="GitHub" src="https://img.shields.io/github/license/davidgasquez/datadex?style=flat-square"> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/datadex/ci.yml?style=flat-square"> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/davidgasquez/datadex?style=flat-square"></p>
 </div>
+<p><br></p>
 <p>Datadex is a set of tools and frameworks that allow everyone to collaborate on Open Data using principles from the Modern/Open Data Stack. With the help of tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org/">DuckDB</a> you can transform data by writing <code>select</code> statements.</p>
 <section id="features" class="level3">
 <h3 class="anchored" data-anchor-id="features">💡 Features</h3>
@@ -151,7 +145,6 @@ Collaborate on Open Data using modern tools like <a href="https://docs.getdbt.co
 <li><strong>Data as Code</strong>. Version your data as code thanks to <code>dbt</code>! Publish and share your models for other people to build on top of them. Data, reproducible and accessible!</li>
 <li><strong>Modern</strong>: Supports types, tests, materialized views, and more. Don’t build new tools to work with Open Data, build bridges with the existing ones.</li>
 </ul>
-</section>
 </section>
 <section id="usage" class="level2">
 <h2 class="anchored" data-anchor-id="usage">💻 Usage</h2>
@@ -458,8 +451,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Made with ❤️ by David Gasquez</p>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/davidgasquez/datadex/edit/main/README.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/davidgasquez/datadex/edit/main/README.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

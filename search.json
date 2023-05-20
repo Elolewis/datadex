@@ -2,49 +2,42 @@
   {
     "objectID": "README.html",
     "href": "README.html",
-    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
+    "title": "\nD A T A D E X\n",
     "section": "",
-    "text": "Collaborate on Open Data using modern tools like dbt and DuckDB"
-  },
-  {
-    "objectID": "README.html#what-is-datadex",
-    "href": "README.html#what-is-datadex",
-    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
-    "section": "🤔 What is Datadex?",
-    "text": "🤔 What is Datadex?\n\n\n\n\n\nDatadex is a set of tools and frameworks that allow everyone to collaborate on Open Data using principles from the Modern/Open Data Stack. With the help of tools like dbt and DuckDB you can transform data by writing select statements.\n\n💡 Features\n\nOpen: Play well with the rest of the ecosystem.\nModular: Each tool can be replaced and extended (adapters). Works well in many environments.\nFlexible. Run it from your laptop, in a cluster, or from the browser.\nData as Code. Version your data as code thanks to dbt! Publish and share your models for other people to build on top of them. Data, reproducible and accessible!\nModern: Supports types, tests, materialized views, and more. Don’t build new tools to work with Open Data, build bridges with the existing ones."
+    "text": "Collaborate on Open Data using modern tools like dbt and DuckDB\nDatadex is a set of tools and frameworks that allow everyone to collaborate on Open Data using principles from the Modern/Open Data Stack. With the help of tools like dbt and DuckDB you can transform data by writing select statements."
   },
   {
     "objectID": "README.html#usage",
     "href": "README.html#usage",
-    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
+    "title": "\nD A T A D E X\n",
     "section": "💻 Usage",
     "text": "💻 Usage\nThis is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:\n\nSetup dependencies with make deps.\nBuild your dbt models and save them to Parquet files with make run.\nExplore the data with make rill."
   },
   {
     "objectID": "README.html#what-can-you-do-with-datadex",
     "href": "README.html#what-can-you-do-with-datadex",
-    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
+    "title": "\nD A T A D E X\n",
     "section": "🚀 What can you do with Datadex?",
     "text": "🚀 What can you do with Datadex?\n\nModel local and remote datasets with dbt.\nUse any of the other awesome dbt features like tests and docs. Docs are automatically generated and published on GitHub Pages."
   },
   {
     "objectID": "README.html#setup",
     "href": "README.html#setup",
-    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
+    "title": "\nD A T A D E X\n",
     "section": "⚙️ Setup",
     "text": "⚙️ Setup\nThe fastest way to start using Datadex is via VSCode Remote Containers. Once inside the develpment environment, you’ll only need to run make deps.\n\n\n\n\n\nPS: The development environment can also run in your browser thanks to GitHub Codespaces."
   },
   {
     "objectID": "README.html#motivation",
     "href": "README.html#motivation",
-    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
+    "title": "\nD A T A D E X\n",
     "section": "🎯 Motivation",
     "text": "🎯 Motivation\nThis small project was created after thinking how an Open Data Protocol could look like! I just wanted to stitch together a few open source technologies and see what could they do."
   },
   {
     "objectID": "README.html#acknowledgements",
     "href": "README.html#acknowledgements",
-    "title": "\n𝐃 𝐀 𝐓 𝐀 𝐃 𝐄 𝐗\n",
+    "title": "\nD A T A D E X\n",
     "section": "👏 Acknowledgements",
     "text": "👏 Acknowledgements\n\nThis proof of concept was created thanks to open source projects like DuckDB and dbt.\nDatadex name was inspired by Juan Benet awesome data projects."
   },
@@ -89,5 +82,47 @@
     "title": "Quarto",
     "section": "Dynamic Graphs",
     "text": "Dynamic Graphs\n\nimport altair as alt\nimport pandas as pd\nimport numpy as np\n\nnp.random.seed(42)\nsource = pd.DataFrame(\n    np.cumsum(np.random.randn(100, 3), 0).round(2),\n    columns=[\"A\", \"B\", \"C\"],\n    index=pd.RangeIndex(100, name=\"x\"),\n)\nsource = source.reset_index().melt(\"x\", var_name=\"category\", value_name=\"y\")\n\n# Create a selection that chooses the nearest point & selects based on x-value\nnearest = alt.selection_point(nearest=True, on=\"mouseover\", fields=[\"x\"], empty=False)\n\n# The basic line\nline = (\n    alt.Chart(source)\n    .mark_line(interpolate=\"basis\")\n    .encode(x=\"x:Q\", y=\"y:Q\", color=\"category:N\")\n)\n\n# Transparent selectors across the chart. This is what tells us\n# the x-value of the cursor\nselectors = (\n    alt.Chart(source)\n    .mark_point()\n    .encode(\n        x=\"x:Q\",\n        opacity=alt.value(0),\n    )\n    .add_params(nearest)\n)\n\n# Draw points on the line, and highlight based on selection\npoints = line.mark_point().encode(\n    opacity=alt.condition(nearest, alt.value(1), alt.value(0))\n)\n\n# Draw text labels near the points, and highlight based on selection\ntext = line.mark_text(align=\"left\", dx=5, dy=-5).encode(\n    text=alt.condition(nearest, \"y:Q\", alt.value(\" \"))\n)\n\n# Draw a rule at the location of the selection\nrules = (\n    alt.Chart(source)\n    .mark_rule(color=\"gray\")\n    .encode(\n        x=\"x:Q\",\n    )\n    .transform_filter(nearest)\n)\n\n# Put the five layers into a chart and bind the data\nalt.layer(line, selectors, points, rules, text).properties(\n    width=\"container\", height=300\n)\n\n\n\n\n\n\n\nYou can even embed a whole dataset and interact with it Tabelau style.\n\nimport pygwalker as pyg\n\npyg.walk(source)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\nD A T A D E X\n",
+    "section": "",
+    "text": "Collaborate on Open Data using modern tools like dbt and DuckDB\nDatadex is a set of tools and frameworks that allow everyone to collaborate on Open Data using principles from the Modern/Open Data Stack. With the help of tools like dbt and DuckDB you can transform data by writing select statements."
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "\nD A T A D E X\n",
+    "section": "💻 Usage",
+    "text": "💻 Usage\nThis is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:\n\nSetup dependencies with make deps.\nBuild your dbt models and save them to Parquet files with make run.\nExplore the data with make rill."
+  },
+  {
+    "objectID": "index.html#what-can-you-do-with-datadex",
+    "href": "index.html#what-can-you-do-with-datadex",
+    "title": "\nD A T A D E X\n",
+    "section": "🚀 What can you do with Datadex?",
+    "text": "🚀 What can you do with Datadex?\n\nModel local and remote datasets with dbt.\nUse any of the other awesome dbt features like tests and docs. Docs are automatically generated and published on GitHub Pages."
+  },
+  {
+    "objectID": "index.html#setup",
+    "href": "index.html#setup",
+    "title": "\nD A T A D E X\n",
+    "section": "⚙️ Setup",
+    "text": "⚙️ Setup\nThe fastest way to start using Datadex is via VSCode Remote Containers. Once inside the develpment environment, you’ll only need to run make deps.\n\n\n\n\n\nPS: The development environment can also run in your browser thanks to GitHub Codespaces."
+  },
+  {
+    "objectID": "index.html#motivation",
+    "href": "index.html#motivation",
+    "title": "\nD A T A D E X\n",
+    "section": "🎯 Motivation",
+    "text": "🎯 Motivation\nThis small project was created after thinking how an Open Data Protocol could look like! I just wanted to stitch together a few open source technologies and see what could they do."
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "\nD A T A D E X\n",
+    "section": "👏 Acknowledgements",
+    "text": "👏 Acknowledgements\n\nThis proof of concept was created thanks to open source projects like DuckDB and dbt.\nDatadex name was inspired by Juan Benet awesome data projects."
   }
 ]

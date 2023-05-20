@@ -109,6 +109,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="https://em-content.zobj.net/thumbs/120/google/350/package_1f4e6.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Datadex</span>
     </a>
@@ -119,22 +122,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../README.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-notebooks" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Notebooks</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-notebooks">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/quarto.html" rel="" target="">
+ <span class="dropdown-text">Quarto Example</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../notebooks/quarto.html" rel="" target="" aria-current="page">
- <span class="menu-text">Quarto Example</span></a>
+        <li>
+    <a class="dropdown-item" href="../notebooks/pyscript.html" rel="" target="">
+ <span class="dropdown-text">Pyscript</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../notebooks/pyscript.html" rel="" target="">
- <span class="menu-text">Pyscript</span></a>
+        <li>
+    <a class="dropdown-item" href="../notebooks/climate.html" rel="" target="">
+ <span class="dropdown-text">Climate</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../notebooks/climate.html" rel="" target="">
- <span class="menu-text">Climate</span></a>
-  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../docs" rel="" target="">
  <span class="menu-text">dbt Docs</span></a>
@@ -1135,8 +1141,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Made with ❤️ by David Gasquez</p>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/davidgasquez/datadex/blob/main/notebooks/quarto.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/davidgasquez/datadex/blob/main/notebooks/quarto.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
