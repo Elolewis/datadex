@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "notebooks/quarto.html",
+    "href": "notebooks/quarto.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "This page contains a few examples of how to do things in Quarto’s world.\n\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\n\ntable = [\n    [\"Sun\", 696000, 1989100000],\n    [\"Earth\", 6371, 5973.6],\n    [\"Moon\", 1737, 73.5],\n    [\"Mars\", 3390, 641.85],\n]\nMarkdown(tabulate(table, headers=[\"Planet\", \"R (km)\", \"mass (x 10^29 kg)\"]))\n\n\n\nTable 1: Planets\n\n\nPlanet\nR (km)\nmass (x 10^29 kg)\n\n\n\n\nSun\n696000\n1.9891e+09\n\n\nEarth\n6371\n5973.6\n\n\nMoon\n1737\n73.5\n\n\nMars\n3390\n641.85\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 23, 2, 4])\nplt.show()\n\nplt.plot([8, 65, 23, 90])\nplt.show()\n\n\n\n\n\n\n\n(a) First\n\n\n\n\n\n\n\n(b) Second\n\n\n\n\nFigure 1: Charts"
+  },
+  {
+    "objectID": "notebooks/quarto.html#intro",
+    "href": "notebooks/quarto.html#intro",
+    "title": "Quarto",
+    "section": "",
+    "text": "This page contains a few examples of how to do things in Quarto’s world.\n\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\n\ntable = [\n    [\"Sun\", 696000, 1989100000],\n    [\"Earth\", 6371, 5973.6],\n    [\"Moon\", 1737, 73.5],\n    [\"Mars\", 3390, 641.85],\n]\nMarkdown(tabulate(table, headers=[\"Planet\", \"R (km)\", \"mass (x 10^29 kg)\"]))\n\n\n\nTable 1: Planets\n\n\nPlanet\nR (km)\nmass (x 10^29 kg)\n\n\n\n\nSun\n696000\n1.9891e+09\n\n\nEarth\n6371\n5973.6\n\n\nMoon\n1737\n73.5\n\n\nMars\n3390\n641.85\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 23, 2, 4])\nplt.show()\n\nplt.plot([8, 65, 23, 90])\nplt.show()\n\n\n\n\n\n\n\n(a) First\n\n\n\n\n\n\n\n(b) Second\n\n\n\n\nFigure 1: Charts"
+  },
+  {
+    "objectID": "notebooks/quarto.html#dynamic-graphs",
+    "href": "notebooks/quarto.html#dynamic-graphs",
+    "title": "Quarto",
+    "section": "Dynamic Graphs",
+    "text": "Dynamic Graphs\n\nimport altair as alt\nimport pandas as pd\nimport numpy as np\n\nnp.random.seed(42)\nsource = pd.DataFrame(\n    np.cumsum(np.random.randn(100, 3), 0).round(2),\n    columns=[\"A\", \"B\", \"C\"],\n    index=pd.RangeIndex(100, name=\"x\"),\n)\nsource = source.reset_index().melt(\"x\", var_name=\"category\", value_name=\"y\")\n\n# Create a selection that chooses the nearest point & selects based on x-value\nnearest = alt.selection_point(nearest=True, on=\"mouseover\", fields=[\"x\"], empty=False)\n\n# The basic line\nline = (\n    alt.Chart(source)\n    .mark_line(interpolate=\"basis\")\n    .encode(x=\"x:Q\", y=\"y:Q\", color=\"category:N\")\n)\n\n# Transparent selectors across the chart. This is what tells us\n# the x-value of the cursor\nselectors = (\n    alt.Chart(source)\n    .mark_point()\n    .encode(\n        x=\"x:Q\",\n        opacity=alt.value(0),\n    )\n    .add_params(nearest)\n)\n\n# Draw points on the line, and highlight based on selection\npoints = line.mark_point().encode(\n    opacity=alt.condition(nearest, alt.value(1), alt.value(0))\n)\n\n# Draw text labels near the points, and highlight based on selection\ntext = line.mark_text(align=\"left\", dx=5, dy=-5).encode(\n    text=alt.condition(nearest, \"y:Q\", alt.value(\" \"))\n)\n\n# Draw a rule at the location of the selection\nrules = (\n    alt.Chart(source)\n    .mark_rule(color=\"gray\")\n    .encode(\n        x=\"x:Q\",\n    )\n    .transform_filter(nearest)\n)\n\n# Put the five layers into a chart and bind the data\nalt.layer(line, selectors, points, rules, text).properties(\n    width=\"container\", height=300\n)\n\n\n\n\n\n\n\nYou can even embed a whole dataset and interact with it Tabelau style.\n\nimport pygwalker as pyg\n\npyg.walk(source)"
+  },
+  {
+    "objectID": "notebooks/climate.html",
+    "href": "notebooks/climate.html",
+    "title": "Climate",
+    "section": "",
+    "text": "Evolution of the CO2 concentration in the atmosphere.\n\n\nCode\nimport pandas as pd\nimport altair as alt\n\ndf = pd.read_parquet(\"../data/climate_co2_global_trend.parquet\")\ndf[\"date\"] = pd.to_datetime(df[\"date\"])\n\n# Altair interactive line plot\n\nc = (\n    alt.Chart(df)\n    .mark_line()\n    .encode(\n        x=\"date:T\",\n        y=alt.Y(\"trend:Q\", scale=alt.Scale(domain=[390, 430]), title=\"CO2 (ppm)\"),\n        tooltip=[\"date:T\", \"trend:Q\"],\n    )\n    .properties(width=\"container\", height=200)\n    .configure_view(strokeWidth=0)\n    .configure_axis(grid=False, labelFontSize=14, titleFontSize=14)\n    .configure_title(fontSize=16, anchor=\"start\", color=\"gray\")\n    .display()\n)"
+  },
+  {
     "objectID": "README.html",
     "href": "README.html",
     "title": "\nD A T A D E X\n",
@@ -56,32 +84,11 @@
     "text": "Jupyter REPL\nYou can also have an entire Jupyter REPL running in your browser, with the ability to run arbitrary Python code!\nGo ahead and try this out:\nfrom matplotlib import pyplot as plt\nimport numpy as np\nx, y, scale = np.random.randn(3, 100)\nfig, ax = plt.subplots()\nax.scatter(x=x, y=y, c=scale, s=np.abs(scale) * 500)\nax.set(title=\"Some random data!\")\nplt.show()"
   },
   {
-    "objectID": "notebooks/climate.html",
-    "href": "notebooks/climate.html",
-    "title": "Climate",
+    "objectID": "notebooks/duckdb-ipfs.html",
+    "href": "notebooks/duckdb-ipfs.html",
+    "title": "DuckDB and IPFS",
     "section": "",
-    "text": "Evolution of the CO2 concentration in the atmosphere.\n\n\nCode\nimport pandas as pd\nimport altair as alt\n\ndf = pd.read_parquet(\"../data/climate_co2_global_trend.parquet\")\ndf[\"date\"] = pd.to_datetime(df[\"date\"])\n\n# Altair interactive line plot\n\nc = (\n    alt.Chart(df)\n    .mark_line()\n    .encode(\n        x=\"date:T\",\n        y=alt.Y(\"trend:Q\", scale=alt.Scale(domain=[390, 430]), title=\"CO2 (ppm)\"),\n        tooltip=[\"date:T\", \"trend:Q\"],\n    )\n    .properties(width=\"container\", height=200)\n    .configure_view(strokeWidth=0)\n    .configure_axis(grid=False, labelFontSize=14, titleFontSize=14)\n    .configure_title(fontSize=16, anchor=\"start\", color=\"gray\")\n    .display()\n)"
-  },
-  {
-    "objectID": "notebooks/quarto.html",
-    "href": "notebooks/quarto.html",
-    "title": "Quarto",
-    "section": "",
-    "text": "This page contains a few examples of how to do things in Quarto’s world.\n\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\n\ntable = [\n    [\"Sun\", 696000, 1989100000],\n    [\"Earth\", 6371, 5973.6],\n    [\"Moon\", 1737, 73.5],\n    [\"Mars\", 3390, 641.85],\n]\nMarkdown(tabulate(table, headers=[\"Planet\", \"R (km)\", \"mass (x 10^29 kg)\"]))\n\n\n\nTable 1: Planets\n\n\nPlanet\nR (km)\nmass (x 10^29 kg)\n\n\n\n\nSun\n696000\n1.9891e+09\n\n\nEarth\n6371\n5973.6\n\n\nMoon\n1737\n73.5\n\n\nMars\n3390\n641.85\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 23, 2, 4])\nplt.show()\n\nplt.plot([8, 65, 23, 90])\nplt.show()\n\n\n\n\n\n\n\n(a) First\n\n\n\n\n\n\n\n(b) Second\n\n\n\n\nFigure 1: Charts"
-  },
-  {
-    "objectID": "notebooks/quarto.html#intro",
-    "href": "notebooks/quarto.html#intro",
-    "title": "Quarto",
-    "section": "",
-    "text": "This page contains a few examples of how to do things in Quarto’s world.\n\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\n\ntable = [\n    [\"Sun\", 696000, 1989100000],\n    [\"Earth\", 6371, 5973.6],\n    [\"Moon\", 1737, 73.5],\n    [\"Mars\", 3390, 641.85],\n]\nMarkdown(tabulate(table, headers=[\"Planet\", \"R (km)\", \"mass (x 10^29 kg)\"]))\n\n\n\nTable 1: Planets\n\n\nPlanet\nR (km)\nmass (x 10^29 kg)\n\n\n\n\nSun\n696000\n1.9891e+09\n\n\nEarth\n6371\n5973.6\n\n\nMoon\n1737\n73.5\n\n\nMars\n3390\n641.85\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 23, 2, 4])\nplt.show()\n\nplt.plot([8, 65, 23, 90])\nplt.show()\n\n\n\n\n\n\n\n(a) First\n\n\n\n\n\n\n\n(b) Second\n\n\n\n\nFigure 1: Charts"
-  },
-  {
-    "objectID": "notebooks/quarto.html#dynamic-graphs",
-    "href": "notebooks/quarto.html#dynamic-graphs",
-    "title": "Quarto",
-    "section": "Dynamic Graphs",
-    "text": "Dynamic Graphs\n\nimport altair as alt\nimport pandas as pd\nimport numpy as np\n\nnp.random.seed(42)\nsource = pd.DataFrame(\n    np.cumsum(np.random.randn(100, 3), 0).round(2),\n    columns=[\"A\", \"B\", \"C\"],\n    index=pd.RangeIndex(100, name=\"x\"),\n)\nsource = source.reset_index().melt(\"x\", var_name=\"category\", value_name=\"y\")\n\n# Create a selection that chooses the nearest point & selects based on x-value\nnearest = alt.selection_point(nearest=True, on=\"mouseover\", fields=[\"x\"], empty=False)\n\n# The basic line\nline = (\n    alt.Chart(source)\n    .mark_line(interpolate=\"basis\")\n    .encode(x=\"x:Q\", y=\"y:Q\", color=\"category:N\")\n)\n\n# Transparent selectors across the chart. This is what tells us\n# the x-value of the cursor\nselectors = (\n    alt.Chart(source)\n    .mark_point()\n    .encode(\n        x=\"x:Q\",\n        opacity=alt.value(0),\n    )\n    .add_params(nearest)\n)\n\n# Draw points on the line, and highlight based on selection\npoints = line.mark_point().encode(\n    opacity=alt.condition(nearest, alt.value(1), alt.value(0))\n)\n\n# Draw text labels near the points, and highlight based on selection\ntext = line.mark_text(align=\"left\", dx=5, dy=-5).encode(\n    text=alt.condition(nearest, \"y:Q\", alt.value(\" \"))\n)\n\n# Draw a rule at the location of the selection\nrules = (\n    alt.Chart(source)\n    .mark_rule(color=\"gray\")\n    .encode(\n        x=\"x:Q\",\n    )\n    .transform_filter(nearest)\n)\n\n# Put the five layers into a chart and bind the data\nalt.layer(line, selectors, points, rules, text).properties(\n    width=\"container\", height=300\n)\n\n\n\n\n\n\n\nYou can even embed a whole dataset and interact with it Tabelau style.\n\nimport pygwalker as pyg\n\npyg.walk(source)"
+    "text": "Turns out you can query arbitrary filesystems with SQL. This notebook shows how to query IPFS with DuckDB.\n\n%pip install git+https://github.com/fsspec/ipfsspec --quiet\n\n\n[notice] A new release of pip available: 22.3.1 -&gt; 23.1.2\n[notice] To update, run: pip install --upgrade pip\nNote: you may need to restart the kernel to use updated packages.\n\n\n\nimport duckdb\nfrom ipfsspec import AsyncIPFSFileSystem\n\n\nipfs_fs = AsyncIPFSFileSystem()\n\n\nduckdb.register_filesystem(ipfs_fs)\n\n\nduckdb.sql(\n    \"select * from read_csv_auto('ipfs://bafybeif5reawvqtsoybj5fhdl4ghaq3oc7kzepuws26zawkjm4johlv3uq')\"\n).df().groupby(\"kingdom_name\")[\"taxonid\"].count().plot.bar()\n\n&lt;Axes: xlabel='kingdom_name'&gt;\n\n\n\n\n\n\nduckdb.query(\n    \"select * from read_parquet('ipfs://bafkreibnx5q6qwxobozkdm6xt7ktvwciyfvtkgy7fud67w5oyxnf5tch4e') limit 10\"\n).df().groupby(\"year\").mean(\"literacy_rate\").plot()\n\n&lt;Axes: xlabel='year'&gt;"
   },
   {
     "objectID": "index.html",

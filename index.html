@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.87">
+<meta name="generator" content="quarto-1.4.104">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -55,7 +55,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
@@ -99,6 +100,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./notebooks/climate.html" rel="" target="">
  <span class="dropdown-text">Climate</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notebooks/duckdb-ipfs.html" rel="" target="">
+ <span class="dropdown-text">DuckDB and IPFS</span></a>
   </li>  
     </ul>
   </li>
@@ -176,7 +181,7 @@ Collaborate on Open Data using modern tools like <a href="https://docs.getdbt.co
 </section>
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">🎯 Motivation</h2>
-<p>This small project was created after <a href="https://publish.obsidian.md/davidgasquez/Open Data">thinking how an Open Data Protocol could look like</a>! I just wanted to stitch together a few open source technologies and see what could they do.</p>
+<p>This small project was created after <a href="https://publish.obsidian.md/davidgasquez/Open+Data">thinking how an Open Data Protocol could look like</a>! I just wanted to stitch together a few open source technologies and see what could they do.</p>
 </section>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">👏 Acknowledgements</h2>
@@ -401,6 +406,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");

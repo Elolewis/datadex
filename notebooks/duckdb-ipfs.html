@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Datadex – readme</title>
+<title>Datadex - DuckDB and IPFS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,10 +105,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="https://em-content.zobj.net/thumbs/120/google/350/package_1f4e6.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Datadex</span>
     </a>
   </div>
@@ -90,25 +124,25 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-notebooks">    
         <li>
-    <a class="dropdown-item" href="./notebooks/quarto.html" rel="" target="">
+    <a class="dropdown-item" href="../notebooks/quarto.html" rel="" target="">
  <span class="dropdown-text">Quarto Example</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notebooks/pyscript.html" rel="" target="">
+    <a class="dropdown-item" href="../notebooks/pyscript.html" rel="" target="">
  <span class="dropdown-text">Pyscript</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notebooks/climate.html" rel="" target="">
+    <a class="dropdown-item" href="../notebooks/climate.html" rel="" target="">
  <span class="dropdown-text">Climate</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notebooks/duckdb-ipfs.html" rel="" target="">
+    <a class="dropdown-item" href="../notebooks/duckdb-ipfs.html" rel="" target="">
  <span class="dropdown-text">DuckDB and IPFS</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./docs" rel="" target="">
+    <a class="nav-link" href="../docs" rel="" target="">
  <span class="menu-text">dbt Docs</span></a>
   </li>  
 </ul>
@@ -126,72 +160,67 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-
-<p align="center">
-</p><h1 style="font-size:80px; font-weight: 800;" align="center">
-D A T A D E X
-</h1>
-<p align="center">
-Collaborate on Open Data using modern tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org">DuckDB</a>
-</p>
-<p></p>
-<div data-align="center">
-<p><img alt="GitHub" src="https://img.shields.io/github/license/davidgasquez/datadex?style=flat-square"> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/datadex/ci.yml?style=flat-square"> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/davidgasquez/datadex?style=flat-square"></p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">DuckDB and IPFS</h1>
 </div>
-<p><br></p>
-<p>Datadex is a set of tools and frameworks that allow everyone to collaborate on Open Data using principles from the Modern/Open Data Stack. With the help of tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org/">DuckDB</a> you can transform data by writing <code>select</code> statements.</p>
-<section id="features" class="level3">
-<h3 class="anchored" data-anchor-id="features">💡 Features</h3>
-<ul>
-<li><strong>Open</strong>: Play well with the rest of the ecosystem.</li>
-<li><strong>Modular</strong>: Each tool can be replaced and extended (adapters). Works well in many environments.</li>
-<li><strong>Flexible</strong>. Run it from your laptop, in a cluster, or from the browser.</li>
-<li><strong>Data as Code</strong>. Version your data as code thanks to <code>dbt</code>! Publish and share your models for other people to build on top of them. Data, reproducible and accessible!</li>
-<li><strong>Modern</strong>: Supports types, tests, materialized views, and more. Don’t build new tools to work with Open Data, build bridges with the existing ones.</li>
-</ul>
-</section>
-<section id="usage" class="level2">
-<h2 class="anchored" data-anchor-id="usage">💻 Usage</h2>
-<p>This is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:</p>
-<ol type="1">
-<li>Setup dependencies with <code>make deps</code>.</li>
-<li>Build your dbt models and save them to Parquet files with <code>make run</code>.</li>
-<li>Explore the data with <code>make rill</code>.</li>
-</ol>
-<p><img src="https://user-images.githubusercontent.com/1682202/195888267-ab119222-9269-4e00-98a9-8cf3a6405252.png" class="img-fluid"></p>
-</section>
-<section id="what-can-you-do-with-datadex" class="level2">
-<h2 class="anchored" data-anchor-id="what-can-you-do-with-datadex">🚀 What can you do with Datadex?</h2>
-<ul>
-<li>Model local and remote datasets with <code>dbt</code>.</li>
-<li>Use any of the other awesome <code>dbt</code> features like <code>tests</code> and <code>docs</code>. <a href="https://davidgasquez.github.io/datadex">Docs are automatically generated and published on GitHub Pages</a>.</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/1682202/195890290-a27498dd-1d7b-4613-ba9a-4848fb3001be.png" class="img-fluid"></p>
-</section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">⚙️ Setup</h2>
-<p>The fastest way to start using Datadex is via <a href="https://code.visualstudio.com/docs/remote/containers">VSCode Remote Containers</a>. Once inside the develpment environment, you’ll only need to run <code>make deps</code>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://codespaces.new/davidgasquez/datadex"><img src="https://github.com/codespaces/badge.svg" class="img-fluid figure-img"></a></p>
-</figure>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Turns out you can query arbitrary filesystems with SQL. This notebook shows how to query IPFS with DuckDB.</p>
+<div id="cell-2" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install git<span class="op">+</span>https:<span class="op">//</span>github.com<span class="op">/</span>fsspec<span class="op">/</span>ipfsspec <span class="op">--</span>quiet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+[notice] A new release of pip available: 22.3.1 -&gt; 23.1.2
+[notice] To update, run: pip install --upgrade pip
+Note: you may need to restart the kernel to use updated packages.</code></pre>
 </div>
-<p>PS: The development environment can also run in your browser thanks to GitHub Codespaces.</p>
-</section>
-<section id="motivation" class="level2">
-<h2 class="anchored" data-anchor-id="motivation">🎯 Motivation</h2>
-<p>This small project was created after <a href="https://publish.obsidian.md/davidgasquez/Open+Data">thinking how an Open Data Protocol could look like</a>! I just wanted to stitch together a few open source technologies and see what could they do.</p>
-</section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">👏 Acknowledgements</h2>
-<ul>
-<li>This proof of concept was created thanks to open source projects like <a href="https://www.duckdb.org/">DuckDB</a> and <a href="https://getdbt.com">dbt</a>.</li>
-<li>Datadex name was inspired by <a href="https://juan.benet.ai/blog/2014-03-11-discussion-scienceexchange/">Juan Benet awesome <code>data</code> projects</a>.</li>
-</ul>
+</div>
+<div id="cell-3" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipfsspec <span class="im">import</span> AsyncIPFSFileSystem</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ipfs_fs <span class="op">=</span> AsyncIPFSFileSystem()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>duckdb.register_filesystem(ipfs_fs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-6" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>duckdb.sql(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"select * from read_csv_auto('ipfs://bafybeif5reawvqtsoybj5fhdl4ghaq3oc7kzepuws26zawkjm4johlv3uq')"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>).df().groupby(<span class="st">"kingdom_name"</span>)[<span class="st">"taxonid"</span>].count().plot.bar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>&lt;Axes: xlabel='kingdom_name'&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="duckdb-ipfs_files/figure-html/cell-6-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<div id="cell-7" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>duckdb.query(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"select * from read_parquet('ipfs://bafkreibnx5q6qwxobozkdm6xt7ktvwciyfvtkgy7fud67w5oyxnf5tch4e') limit 10"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>).df().groupby(<span class="st">"year"</span>).mean(<span class="st">"literacy_rate"</span>).plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>&lt;Axes: xlabel='year'&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="duckdb-ipfs_files/figure-html/cell-7-output-2.png" class="img-fluid"></p>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -499,7 +528,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Made with ❤️ by David Gasquez</p>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/davidgasquez/datadex/edit/main/README.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/davidgasquez/datadex/blob/main/notebooks/duckdb-ipfs.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
@@ -508,5 +537,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
