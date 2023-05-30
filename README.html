@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.104">
+<meta name="generator" content="quarto-1.4.112">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -137,27 +137,28 @@ ul.task-list li input[type="checkbox"] {
 D A T A D E X
 </h1>
 <p align="center">
-Collaborate on Open Data using modern tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org">DuckDB</a>
+Collaborate on Open Data using Open Source Tools
 </p>
 <p></p>
 <div data-align="center">
 <p><img alt="GitHub" src="https://img.shields.io/github/license/davidgasquez/datadex?style=flat-square"> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/datadex/ci.yml?style=flat-square"> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/davidgasquez/datadex?style=flat-square"></p>
 </div>
 <p><br></p>
-<p>Datadex is a set of tools and frameworks that allow everyone to collaborate on Open Data using principles from the Modern/Open Data Stack. With the help of tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org/">DuckDB</a> you can transform data by writing <code>select</code> statements.</p>
-<section id="features" class="level3">
-<h3 class="anchored" data-anchor-id="features">💡 Features</h3>
+<p>Datadex links together tools and frameworks with the goal to allow everyone collaborate on Open Data like people collaborate on Open Source using the principles from the Open Data Stack.</p>
+<p>With Datadex and the help of tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org/">DuckDB</a> you can start modeling data by writing simple <code>select</code> statements!</p>
+<section id="principles" class="level3">
+<h3 class="anchored" data-anchor-id="principles">💡 Principles</h3>
 <ul>
 <li><strong>Open</strong>: Play well with the rest of the ecosystem.</li>
-<li><strong>Modular</strong>: Each tool can be replaced and extended (adapters). Works well in many environments.</li>
-<li><strong>Flexible</strong>. Run it from your laptop, in a cluster, or from the browser.</li>
-<li><strong>Data as Code</strong>. Version your data as code thanks to <code>dbt</code>! Publish and share your models for other people to build on top of them. Data, reproducible and accessible!</li>
-<li><strong>Modern</strong>: Supports types, tests, materialized views, and more. Don’t build new tools to work with Open Data, build bridges with the existing ones.</li>
+<li><strong>Modular</strong>: Each tool can be replaced, extended, or removed. Works well in many environments ( your laptop, in a cluster, or from the browser).</li>
+<li><strong>Permissionless</strong>. Don’t ask, fork it and improve the models!</li>
+<li><strong>Data as Code</strong>. Declarative stateless transformations tracked in <code>git</code>. Version your data as code! Publish and share your reusable models for others to build on top. Data, reproducible and accessible!</li>
+<li><strong>Modern</strong>: Supports types, tests, materialized views, and more. Datadex isn’t a new tool, it is a bridge between existing ones.</li>
 </ul>
 </section>
 <section id="usage" class="level2">
 <h2 class="anchored" data-anchor-id="usage">💻 Usage</h2>
-<p>This is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:</p>
+<p>This is an example of how you can use Datadex to model data, which is already configured with some sample datasets. Get things working end to end with the following steps:</p>
 <ol type="1">
 <li>Setup dependencies with <code>make deps</code>.</li>
 <li>Build your dbt models and save them to Parquet files with <code>make run</code>.</li>
@@ -169,7 +170,7 @@ Collaborate on Open Data using modern tools like <a href="https://docs.getdbt.co
 <h2 class="anchored" data-anchor-id="what-can-you-do-with-datadex">🚀 What can you do with Datadex?</h2>
 <ul>
 <li>Model local and remote datasets with <code>dbt</code>.</li>
-<li>Use any of the other awesome <code>dbt</code> features like <code>tests</code> and <code>docs</code>. <a href="https://davidgasquez.github.io/datadex">Docs are automatically generated and published on GitHub Pages</a>.</li>
+<li>Use any of the other awesome <code>dbt</code> features like <code>tests</code> and <code>docs</code>. <a href="https://davidgasquez.github.io/datadex/docs">Docs are automatically generated and published on GitHub Pages</a>.</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/1682202/195890290-a27498dd-1d7b-4613-ba9a-4848fb3001be.png" class="img-fluid"></p>
 </section>

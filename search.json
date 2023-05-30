@@ -32,14 +32,14 @@
     "href": "README.html",
     "title": "\nD A T A D E X\n",
     "section": "",
-    "text": "Collaborate on Open Data using modern tools like dbt and DuckDB\nDatadex is a set of tools and frameworks that allow everyone to collaborate on Open Data using principles from the Modern/Open Data Stack. With the help of tools like dbt and DuckDB you can transform data by writing select statements."
+    "text": "Collaborate on Open Data using Open Source Tools\nDatadex links together tools and frameworks with the goal to allow everyone collaborate on Open Data like people collaborate on Open Source using the principles from the Open Data Stack.\nWith Datadex and the help of tools like dbt and DuckDB you can start modeling data by writing simple select statements!"
   },
   {
     "objectID": "README.html#usage",
     "href": "README.html#usage",
     "title": "\nD A T A D E X\n",
     "section": "💻 Usage",
-    "text": "💻 Usage\nThis is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:\n\nSetup dependencies with make deps.\nBuild your dbt models and save them to Parquet files with make run.\nExplore the data with make rill."
+    "text": "💻 Usage\nThis is an example of how you can use Datadex to model data, which is already configured with some sample datasets. Get things working end to end with the following steps:\n\nSetup dependencies with make deps.\nBuild your dbt models and save them to Parquet files with make run.\nExplore the data with make rill."
   },
   {
     "objectID": "README.html#what-can-you-do-with-datadex",
@@ -95,14 +95,14 @@
     "href": "index.html",
     "title": "\nD A T A D E X\n",
     "section": "",
-    "text": "Collaborate on Open Data using modern tools like dbt and DuckDB\nDatadex is a set of tools and frameworks that allow everyone to collaborate on Open Data using principles from the Modern/Open Data Stack. With the help of tools like dbt and DuckDB you can transform data by writing select statements."
+    "text": "Collaborate on Open Data using Open Source Tools\nDatadex links together tools and frameworks with the goal to allow everyone collaborate on Open Data like people collaborate on Open Source using the principles from the Open Data Stack.\nWith Datadex and the help of tools like dbt and DuckDB you can start modeling data by writing simple select statements!"
   },
   {
     "objectID": "index.html#usage",
     "href": "index.html#usage",
     "title": "\nD A T A D E X\n",
     "section": "💻 Usage",
-    "text": "💻 Usage\nThis is an example of how you can use Datadex to model data. Is already configured with some sample datasets. Get things working end to end with the following steps:\n\nSetup dependencies with make deps.\nBuild your dbt models and save them to Parquet files with make run.\nExplore the data with make rill."
+    "text": "💻 Usage\nThis is an example of how you can use Datadex to model data, which is already configured with some sample datasets. Get things working end to end with the following steps:\n\nSetup dependencies with make deps.\nBuild your dbt models and save them to Parquet files with make run.\nExplore the data with make rill."
   },
   {
     "objectID": "index.html#what-can-you-do-with-datadex",
