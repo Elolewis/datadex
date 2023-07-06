@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.156">
+<meta name="generator" content="quarto-1.4.187">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -118,10 +118,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">DuckDB and IPFS</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notebooks/brlda.html" rel="" target="">
- <span class="dropdown-text">BRLDA</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="./reports/carbon-dioxide-trend" rel="" target="">
  <span class="dropdown-text">Evidence Report</span></a>
   </li>  
@@ -172,35 +168,25 @@ Collaborate on Open Data using Open Source Tools
 <p><img alt="GitHub" src="https://img.shields.io/github/license/davidgasquez/datadex?style=flat-square"> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/datadex/ci.yml?style=flat-square"> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/davidgasquez/datadex?style=flat-square"></p>
 </div>
 <p><br></p>
-<p>Datadex links together tools and frameworks with the goal to allow everyone collaborate on Open Data like people collaborate on Open Source using the principles from the Open Data Stack.</p>
-<p>With Datadex and the help of tools like <a href="https://docs.getdbt.com/docs/introduction">dbt</a> and <a href="https://duckdb.org/">DuckDB</a> you can start modeling data by writing simple <code>select</code> statements!</p>
+<p>Datadex is a platform where people collaborate on Open Data using modern and open source tools and frameworks.</p>
 <section id="principles" class="level3">
 <h3 class="anchored" data-anchor-id="principles">💡 Principles</h3>
 <ul>
-<li><strong>Open</strong>: Play well with the rest of the ecosystem.</li>
+<li><strong>Open</strong>: Play well with the ecosystem. Use open standards and share data in open formats.</li>
 <li><strong>Modular</strong>: Each component can be replaced, extended, or removed. Works well in many environments (your laptop, in a cluster, or from the browser), and with multiple tools (thanks to the Arrow ecosystem).</li>
-<li><strong>Permissionless</strong>. Don’t ask, fork it and improve the models or scripts!</li>
-<li><strong>Data as Code</strong>. Declarative stateless transformations tracked in <code>git</code>. Version your data as code! Publish and share your reusable models for others to build on top. Data, reproducible and accessible!</li>
-<li><strong>Modern</strong>: Supports types, tests, materialized views, and more. Datadex isn’t a new tool, it is a bridge between existing ones.</li>
+<li><strong>Permissionless</strong>. Don’t ask, fork it and improve the models, add a new source or update any script.</li>
+<li><strong>Data as Code</strong>. Declarative stateless transformations tracked in <code>git</code>. Version your data as code! Publish and share your reusable models for others to build on top.</li>
+<li><strong>Modern</strong>: Supports types, tests, materialized views, and more.</li>
 </ul>
+<p>Datadex isn’t a new tool, it is an opinionated bridge between existing ones.</p>
 </section>
-<section id="usage" class="level2">
-<h2 class="anchored" data-anchor-id="usage">💻 Usage</h2>
-<p>This is an example of how you can use Datadex to model data, which is already configured with some sample datasets. Get things working end to end with the following steps:</p>
-<ol type="1">
-<li>Setup dependencies with <code>make deps</code>.</li>
-<li>Build your dbt models and save them to Parquet files with <code>make run</code>.</li>
-<li>Explore the data with <code>make rill</code>.</li>
-</ol>
-<p><img src="https://user-images.githubusercontent.com/1682202/195888267-ab119222-9269-4e00-98a9-8cf3a6405252.png" class="img-fluid"></p>
-</section>
-<section id="what-can-you-do-with-datadex" class="level2">
-<h2 class="anchored" data-anchor-id="what-can-you-do-with-datadex">🚀 What can you do with Datadex?</h2>
+<section id="what-can-you-do-with-datadex" class="level3">
+<h3 class="anchored" data-anchor-id="what-can-you-do-with-datadex">🚀 What can you do with Datadex?</h3>
 <ul>
-<li>Model local and remote datasets with <code>dbt</code>.</li>
-<li>Use any of the other awesome <code>dbt</code> features like <code>tests</code> and <code>docs</code>. <a href="https://davidgasquez.github.io/datadex/docs">Docs are automatically generated and published on GitHub Pages</a>.</li>
+<li>Model <a href="dbt/models/climate/sources.yml">existing datasets using <code>dbt</code> and <code>SQL</code> like you would do in your company</a>. You can use and abuse any of the other awesome <code>dbt</code> features like <code>tests</code> and <code>docs</code> (<a href="https://davidgasquez.github.io/datadex/docs">automatically generated and published on GitHub Pages</a>).</li>
+<li>Add new sources. Use Dagster, dbt Python models, or dbt Plugins to bring data locally and work with it.</li>
+<li>Explore your data with Rill or Jupyter Notebooks. <a href="https://davidgasquez.github.io/datadex/notebooks/quarto.html">Share your findings with others</a> by publishing your notebooks (Quarto) or using Evidence.</li>
 </ul>
-<p><img src="https://user-images.githubusercontent.com/1682202/195890290-a27498dd-1d7b-4613-ba9a-4848fb3001be.png" class="img-fluid"></p>
 </section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">⚙️ Setup</h2>
@@ -210,11 +196,11 @@ Collaborate on Open Data using Open Source Tools
 <p><a href="https://codespaces.new/davidgasquez/datadex"><img src="https://github.com/codespaces/badge.svg" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
-<p>PS: The development environment can also run in your browser thanks to GitHub Codespaces.</p>
+<p>PS: The development environment can also run in your browser thanks to GitHub Codespaces!</p>
 </section>
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">🎯 Motivation</h2>
-<p>This small project was created after <a href="https://publish.obsidian.md/davidgasquez/Open+Data">thinking how an Open Data Protocol could look like</a>! I just wanted to stitch together a few open source technologies and see what could they do.</p>
+<p>This small project was created after <a href="https://publish.obsidian.md/davidgasquez/Open+Data">thinking how an Open Data Protocol could look like</a>!</p>
 </section>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">👏 Acknowledgements</h2>
