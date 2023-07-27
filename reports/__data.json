@@ -1,1 +1,0 @@
-{"type":"data","nodes":[{"type":"data","data":[{"data":1,"customFormattingSettings":2},{},{"version":3,"customFormats":4},"1.0",[]],"uses":{"dependencies":["http://sveltekit-prerender/api/status","http://sveltekit-prerender/api/6666cd76f96956469e7be39d750cc7d9.json"],"route":1},"slash":"always"},null]}

@@ -1,0 +1,11 @@
+[
+  {
+    "listing": "/notebooks/index.html",
+    "items": [
+      "/notebooks/climate.html",
+      "/notebooks/duckdb-ipfs.html",
+      "/notebooks/pyscript.html",
+      "/notebooks/quarto.html"
+    ]
+  }
+]
