@@ -2,7 +2,6 @@
   {
     "listing": "/notebooks/index.html",
     "items": [
-      "/notebooks/2023-07-28-climate.html",
       "/notebooks/2023-02-22-duckdb-ipfs.html",
       "/notebooks/2023-05-15-pyscript.html",
       "/notebooks/2023-05-06-quarto.html"
