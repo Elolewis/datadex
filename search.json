@@ -11,7 +11,7 @@
     "href": "README.html",
     "title": "\nD A T A D E X\n",
     "section": "",
-    "text": "Collaborate on Open Data using Open Source Tools\nOpen and local friendly data platform to make Open Data collaboration easier using modular tools and frameworks."
+    "text": "Collaborate on Open Data using Open Source Tools\nOpen source, serverless, and local-first Data Platform that makes it easy to collaborate on Open Data! Built on top of Dagster, dbt, Quarto, and DuckDB. You can check two instances of Datadex working in the following repositories:"
   },
   {
     "objectID": "README.html#setup",
@@ -46,7 +46,7 @@
     "href": "index.html",
     "title": "\nD A T A D E X\n",
     "section": "",
-    "text": "Collaborate on Open Data using Open Source Tools\nOpen and local friendly data platform to make Open Data collaboration easier using modular tools and frameworks."
+    "text": "Collaborate on Open Data using Open Source Tools\nOpen source, serverless, and local-first Data Platform that makes it easy to collaborate on Open Data! Built on top of Dagster, dbt, Quarto, and DuckDB. You can check two instances of Datadex working in the following repositories:"
   },
   {
     "objectID": "index.html#setup",
