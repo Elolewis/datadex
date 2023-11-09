@@ -18,21 +18,21 @@
     "href": "README.html#setup",
     "title": "\nD A T A D E X\n",
     "section": "⚙️ Setup",
-    "text": "⚙️ Setup\nThe fastest way to start using Datadex is via VSCode Remote Containers. Once inside the develpment environment, you’ll only need to run make deps.\n\nPS: The development environment can also run in your browser thanks to GitHub Codespaces!"
+    "text": "⚙️ Setup\nDatadex consists of several components and requires some setup to get started.\n\n🐳 Docker / Dev Containers\nThe fastest way to start using Datadex is via VSCode Remote Containers. Once inside the develpment environment, you’ll only need to run make dev to spin up the Dagster UI locally.\n\nThe development environment can also run in your browser thanks to GitHub Codespaces!\nYou can also build the Docker image locally and run it with:\nmake build\nmake docker-run\n\n\n🐍 Python Virtual Environment\nClone the repository and run the following commands from the root folder:\n# Create a virtual environment\npython3 -m venv .venv\nsource .venv/bin/activate\n\n# Install the package and dependencies\npip install -e .[dev]\nNow, you should be able to spin up Dagster UI and access it locally."
   },
   {
     "objectID": "README.html#motivation",
     "href": "README.html#motivation",
     "title": "\nD A T A D E X\n",
     "section": "🎯 Motivation",
-    "text": "🎯 Motivation\nThis small project was created after thinking how an Open Data Protocol could look like!"
+    "text": "🎯 Motivation\nThis project started after thinking how an Open Data Protocol could look like!"
   },
   {
     "objectID": "README.html#acknowledgements",
     "href": "README.html#acknowledgements",
     "title": "\nD A T A D E X\n",
     "section": "👏 Acknowledgements",
-    "text": "👏 Acknowledgements\n\nThis proof of concept was created thanks to open source projects like DuckDB and dbt.\nDatadex name was inspired by Juan Benet awesome data projects."
+    "text": "👏 Acknowledgements\n\nThis proof of concept was created thanks to open source projects like DuckDB, dbt, Dagster, and Quarto.\nDatadex name was inspired by Juan Benet’s data projects."
   },
   {
     "objectID": "reports/2023-01-01-Datadex.html",
@@ -67,20 +67,20 @@
     "href": "index.html#setup",
     "title": "\nD A T A D E X\n",
     "section": "⚙️ Setup",
-    "text": "⚙️ Setup\nThe fastest way to start using Datadex is via VSCode Remote Containers. Once inside the develpment environment, you’ll only need to run make deps.\n\nPS: The development environment can also run in your browser thanks to GitHub Codespaces!"
+    "text": "⚙️ Setup\nDatadex consists of several components and requires some setup to get started.\n\n🐳 Docker / Dev Containers\nThe fastest way to start using Datadex is via VSCode Remote Containers. Once inside the develpment environment, you’ll only need to run make dev to spin up the Dagster UI locally.\n\nThe development environment can also run in your browser thanks to GitHub Codespaces!\nYou can also build the Docker image locally and run it with:\nmake build\nmake docker-run\n\n\n🐍 Python Virtual Environment\nClone the repository and run the following commands from the root folder:\n# Create a virtual environment\npython3 -m venv .venv\nsource .venv/bin/activate\n\n# Install the package and dependencies\npip install -e .[dev]\nNow, you should be able to spin up Dagster UI and access it locally."
   },
   {
     "objectID": "index.html#motivation",
     "href": "index.html#motivation",
     "title": "\nD A T A D E X\n",
     "section": "🎯 Motivation",
-    "text": "🎯 Motivation\nThis small project was created after thinking how an Open Data Protocol could look like!"
+    "text": "🎯 Motivation\nThis project started after thinking how an Open Data Protocol could look like!"
   },
   {
     "objectID": "index.html#acknowledgements",
     "href": "index.html#acknowledgements",
     "title": "\nD A T A D E X\n",
     "section": "👏 Acknowledgements",
-    "text": "👏 Acknowledgements\n\nThis proof of concept was created thanks to open source projects like DuckDB and dbt.\nDatadex name was inspired by Juan Benet awesome data projects."
+    "text": "👏 Acknowledgements\n\nThis proof of concept was created thanks to open source projects like DuckDB, dbt, Dagster, and Quarto.\nDatadex name was inspired by Juan Benet’s data projects."
   }
 ]
