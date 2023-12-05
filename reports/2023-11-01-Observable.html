@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.489">
+<meta name="generator" content="quarto-1.4.518">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -333,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"energydb = DuckDBClient.of({\n  energy: FileAttachment(\"https://raw.githubusercontent.com/datonic/spain-energy-demand/main/data/spain-energy-demand.csv\")\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"Inputs.table(energydb.query(\"select * from energy order by datetime desc limit 10\"))\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"monthly = energydb.sql`select date_part('month', datetime) as t, avg(value) / 1000 as v from energy group by 1 order by 1 desc`\n\nPlot.plot({\n  grid: true,\n  marks: [\n    Plot.lineY(monthly, {\n      x: \"t\",\n      y: \"v\"\n    }),\n\t]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"\nvg = {\n  const vg = await import('https://cdn.jsdelivr.net/npm/@uwdata/vgplot/+esm');\n  const wasm = await vg.wasmConnector();\n  vg.coordinator().databaseConnector(wasm);\n  return vg;\n}\n\nviewof flights = {\n  // load flights data from external parquet file\n  await vg.coordinator().exec(`CREATE TABLE IF NOT EXISTS flights10m AS\n    SELECT\n      GREATEST(-60, LEAST(ARR_DELAY, 180))::DOUBLE AS delay,\n      DISTANCE AS distance,\n      DEP_TIME AS time\n    FROM 'https://uwdata.github.io/mosaic-datasets/data/flights-10m.parquet'`);\n\n  // create a selection with crossfilter resolution\n  const brush = vg.Selection.crossfilter();\n\n  // helper method to generate a binned plot filtered by brush\n  // a plot contains a rectY mark for a histogram, as well as\n  // an intervalX interactor to populate the brush selection\n  const makePlot = column => vg.plot(\n    vg.rectY(\n      vg.from(\"flights10m\", { filterBy: brush }), // data set and filter selection\n      { x: vg.bin(column), y: vg.count(), fill: \"steelblue\", inset: 0.5 }\n    ),\n    vg.intervalX({ as: brush }), // create an interval selection brush\n    vg.xDomain(vg.Fixed), // don't change the x-axis domain across updates\n    vg.marginLeft(75),\n    vg.width(600),\n    vg.height(200)\n  );\n\n  // generate dashboard with three linked histograms\n  return vg.vconcat(\n    makePlot(\"delay\"),\n    makePlot(\"time\"),\n    makePlot(\"distance\")\n  );\n}\n"},{"methodName":"interpretQuiet","source":"shinyInput('flights')"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImVuZXJneWRiID0gRHVja0RCQ2xpZW50Lm9mKHtcbiAgZW5lcmd5OiBGaWxlQXR0YWNobWVudChcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9kYXRvbmljL3NwYWluLWVuZXJneS1kZW1hbmQvbWFpbi9kYXRhL3NwYWluLWVuZXJneS1kZW1hbmQuY3N2XCIpXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiSW5wdXRzLnRhYmxlKGVuZXJneWRiLnF1ZXJ5KFwic2VsZWN0ICogZnJvbSBlbmVyZ3kgb3JkZXIgYnkgZGF0ZXRpbWUgZGVzYyBsaW1pdCAxMFwiKSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Im1vbnRobHkgPSBlbmVyZ3lkYi5zcWxgc2VsZWN0IGRhdGVfcGFydCgnbW9udGgnLCBkYXRldGltZSkgYXMgdCwgYXZnKHZhbHVlKSAvIDEwMDAgYXMgdiBmcm9tIGVuZXJneSBncm91cCBieSAxIG9yZGVyIGJ5IDEgZGVzY2BcblxuUGxvdC5wbG90KHtcbiAgZ3JpZDogdHJ1ZSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmxpbmVZKG1vbnRobHksIHtcbiAgICAgIHg6IFwidFwiLFxuICAgICAgeTogXCJ2XCJcbiAgICB9KSxcblx0XVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxudmcgPSB7XG4gIGNvbnN0IHZnID0gYXdhaXQgaW1wb3J0KCdodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL0B1d2RhdGEvdmdwbG90Lytlc20nKTtcbiAgY29uc3Qgd2FzbSA9IGF3YWl0IHZnLndhc21Db25uZWN0b3IoKTtcbiAgdmcuY29vcmRpbmF0b3IoKS5kYXRhYmFzZUNvbm5lY3Rvcih3YXNtKTtcbiAgcmV0dXJuIHZnO1xufVxuXG52aWV3b2YgZmxpZ2h0cyA9IHtcbiAgLy8gbG9hZCBmbGlnaHRzIGRhdGEgZnJvbSBleHRlcm5hbCBwYXJxdWV0IGZpbGVcbiAgYXdhaXQgdmcuY29vcmRpbmF0b3IoKS5leGVjKGBDUkVBVEUgVEFCTEUgSUYgTk9UIEVYSVNUUyBmbGlnaHRzMTBtIEFTXG4gICAgU0VMRUNUXG4gICAgICBHUkVBVEVTVCgtNjAsIExFQVNUKEFSUl9ERUxBWSwgMTgwKSk6OkRPVUJMRSBBUyBkZWxheSxcbiAgICAgIERJU1RBTkNFIEFTIGRpc3RhbmNlLFxuICAgICAgREVQX1RJTUUgQVMgdGltZVxuICAgIEZST00gJ2h0dHBzOi8vdXdkYXRhLmdpdGh1Yi5pby9tb3NhaWMtZGF0YXNldHMvZGF0YS9mbGlnaHRzLTEwbS5wYXJxdWV0J2ApO1xuXG4gIC8vIGNyZWF0ZSBhIHNlbGVjdGlvbiB3aXRoIGNyb3NzZmlsdGVyIHJlc29sdXRpb25cbiAgY29uc3QgYnJ1c2ggPSB2Zy5TZWxlY3Rpb24uY3Jvc3NmaWx0ZXIoKTtcblxuICAvLyBoZWxwZXIgbWV0aG9kIHRvIGdlbmVyYXRlIGEgYmlubmVkIHBsb3QgZmlsdGVyZWQgYnkgYnJ1c2hcbiAgLy8gYSBwbG90IGNvbnRhaW5zIGEgcmVjdFkgbWFyayBmb3IgYSBoaXN0b2dyYW0sIGFzIHdlbGwgYXNcbiAgLy8gYW4gaW50ZXJ2YWxYIGludGVyYWN0b3IgdG8gcG9wdWxhdGUgdGhlIGJydXNoIHNlbGVjdGlvblxuICBjb25zdCBtYWtlUGxvdCA9IGNvbHVtbiA9PiB2Zy5wbG90KFxuICAgIHZnLnJlY3RZKFxuICAgICAgdmcuZnJvbShcImZsaWdodHMxMG1cIiwgeyBmaWx0ZXJCeTogYnJ1c2ggfSksIC8vIGRhdGEgc2V0IGFuZCBmaWx0ZXIgc2VsZWN0aW9uXG4gICAgICB7IHg6IHZnLmJpbihjb2x1bW4pLCB5OiB2Zy5jb3VudCgpLCBmaWxsOiBcInN0ZWVsYmx1ZVwiLCBpbnNldDogMC41IH1cbiAgICApLFxuICAgIHZnLmludGVydmFsWCh7IGFzOiBicnVzaCB9KSwgLy8gY3JlYXRlIGFuIGludGVydmFsIHNlbGVjdGlvbiBicnVzaFxuICAgIHZnLnhEb21haW4odmcuRml4ZWQpLCAvLyBkb24ndCBjaGFuZ2UgdGhlIHgtYXhpcyBkb21haW4gYWNyb3NzIHVwZGF0ZXNcbiAgICB2Zy5tYXJnaW5MZWZ0KDc1KSxcbiAgICB2Zy53aWR0aCg2MDApLFxuICAgIHZnLmhlaWdodCgyMDApXG4gICk7XG5cbiAgLy8gZ2VuZXJhdGUgZGFzaGJvYXJkIHdpdGggdGhyZWUgbGlua2VkIGhpc3RvZ3JhbXNcbiAgcmV0dXJuIHZnLnZjb25jYXQoXG4gICAgbWFrZVBsb3QoXCJkZWxheVwiKSxcbiAgICBtYWtlUGxvdChcInRpbWVcIiksXG4gICAgbWFrZVBsb3QoXCJkaXN0YW5jZVwiKVxuICApO1xufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdmbGlnaHRzJykifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -547,8 +547,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
         typesetMath(container);
         return container.innerHTML

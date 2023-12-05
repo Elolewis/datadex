@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.489">
+<meta name="generator" content="quarto-1.4.518">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,8 +74,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="site_libs/quarto-dashboard/stickythead.js"></script>
+<script src="site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
 <script src="site_libs/quarto-dashboard/web-components.js" type="module"></script>
 <script src="site_libs/quarto-dashboard/components.js"></script>
+<link href="site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,7 +114,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </head>
 
 <body class="quarto-dashboard nav-fixed fullcontent">
-
 
 
 <div id="quarto-search-results"></div>
@@ -175,23 +179,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="quarto-dashboard-header">
 <nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
   <div class="navbar-container container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="true" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>    
+
+
     <div class="navbar-brand-container">       
 
       <div class="navbar-title">
         <div class="navbar-title-text"><a href="#">GreyNoise Country Explorer</a></div>
         
+        
       </div>
     </div>
-<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-geo-attributed-attacks" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#geo-attributed-attacks" href="#geo-attributed-attacks" aria-controls="geo-attributed-attacks" aria-selected="true"><span class="nav-link-text">Geo-Attributed Attacks</span></a></li><li class="nav-item" role="presentation"><a id="tab-malicious-activity" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#malicious-activity" href="#malicious-activity" aria-controls="malicious-activity" aria-selected="false"><span class="nav-link-text">Malicious Activity</span></a></li><li class="nav-item" role="presentation"><a id="tab-about" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#about" href="#about" aria-controls="about" aria-selected="false"><span class="nav-link-text">About</span></a></li></ul></div></div>
-
-
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-geo-attributed-attacks" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#geo-attributed-attacks" data-scrolling="true" href="#geo-attributed-attacks" aria-controls="geo-attributed-attacks" aria-selected="true"><span class="nav-link-text">Geo-Attributed Attacks</span></a></li><li class="nav-item" role="presentation"><a id="tab-malicious-activity" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#malicious-activity" data-scrolling="true" href="#malicious-activity" aria-controls="malicious-activity" aria-selected="false"><span class="nav-link-text">Malicious Activity</span></a></li><li class="nav-item" role="presentation"><a id="tab-about" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#about" data-scrolling="true" href="#about" aria-controls="about" aria-selected="false"><span class="nav-link-text">About</span></a></li></ul></div></div>
 </nav>
 </header></header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container dashboard-scrolling">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container dashboard-scrolling quarto-dashboard-pages">
 <!-- sidebar -->
 <!-- margin-sidebar -->
 <!-- main -->
@@ -233,16 +238,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="flow" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
-<div id="geo-attributed-attacks" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-title="Geo-Attributed Attacks" data-orientation="rows" aria-labelledby="tab-geo-attributed-attacks">
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="flow" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div id="geo-attributed-attacks" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-geo-attributed-attacks">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card html-fill-item html-fill-container bslib-card" data-layout="flow" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div class="card-header">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header dashboard-card-no-title">
 <p>Source Country Networks Attacking <span><span id="ojs-element-id-1"></span></span></p>
-</div>
 </div>
 <div class="cell card-body html-fill-item html-fill-container" data-output="asis">
 <div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb4" data-startfrom="41" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 40;"><span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>incomingPlot <span class="op">=</span> {</span>
@@ -283,15 +286,18 @@ grid-auto-rows: minmax(0, 1fr);">
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card html-fill-item html-fill-container bslib-card" data-layout="flow" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div class="card-header">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header dashboard-card-no-title">
 <p>Source Country Networks <strong>Only</strong> Attacking <span><span id="ojs-element-id-2"></span></span></p>
-</div>
 </div>
 <div class="cell card-body html-fill-item html-fill-container" data-output="asis">
 <div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb5" data-startfrom="83" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 82;"><span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>incomingOnlyPlot <span class="op">=</span> {</span>
@@ -331,19 +337,22 @@ grid-auto-rows: minmax(0, 1fr);">
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
 </div>
-<div id="malicious-activity" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-title="Malicious Activity" data-orientation="rows" aria-labelledby="tab-malicious-activity">
+<div id="malicious-activity" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-malicious-activity">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card html-fill-item html-fill-container bslib-card" data-layout="flow" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div class="card-header">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header dashboard-card-no-title">
 <p>Attack Types Against <span><span id="ojs-element-id-3"></span></span></p>
-</div>
 </div>
 <div class="cell card-body html-fill-item html-fill-container" data-output="asis">
 <div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb6" data-startfrom="126" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 125;"><span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>incomingAttacksPlot <span class="op">=</span> {</span>
@@ -384,15 +393,18 @@ grid-auto-rows: minmax(0, 1fr);">
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card html-fill-item html-fill-container bslib-card" data-layout="flow" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div class="card-header">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header dashboard-card-no-title">
 <p>Attack Types <strong>Only</strong> Against <span><span id="ojs-element-id-4"></span></span></p>
-</div>
 </div>
 <div class="cell card-body html-fill-item html-fill-container" data-output="asis">
 <div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb7" data-startfrom="168" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 167;"><span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>incomingOnlyAttackPlot <span class="op">=</span> {</span>
@@ -432,11 +444,16 @@ grid-auto-rows: minmax(0, 1fr);">
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
 </div>
-<div id="about" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-title="About" data-orientation="rows" aria-labelledby="tab-about">
+<div id="about" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-about">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
@@ -507,32 +524,31 @@ Total Outbound Attacks
 </div>
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card html-fill-item html-fill-container bslib-card" data-layout="flow" data-bslib-card-init="" data-require-bs-caller="card()">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <p>This is an example <a href="https://quarto.org/docs/dashboards/">Quarto Dashboard</a> using data from the planetary scale honeypot sensor fleet run by <a href="https://viz.greynoise.io">GreyNoise</a>.</p>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="ojs-auto-generated hidden bslib-grid-item html-fill-item">
 <script type="ojs-module-contents">
-{"contents":[
-  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${countrySelect}</span>`", "cellName":"ojs-element-id-1"}
-,
-  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${countrySelect}</span>`", "cellName":"ojs-element-id-2"}
-,
-  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${countrySelect}</span>`", "cellName":"ojs-element-id-3"}
-,
-  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${countrySelect}</span>`", "cellName":"ojs-element-id-4"}
-]}
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7Y291bnRyeVNlbGVjdH08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2NvdW50cnlTZWxlY3R9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0yIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtjb3VudHJ5U2VsZWN0fTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMyJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7Y291bnRyeVNlbGVjdH08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTQifV19
 </script>
 </div>
 
 
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"jsonURL = \"https://bafybeihossdpesleq77dzptgtu23hfoayl4g73lvwjqxq65ngvzypz6rp4.ipfs.w3s.link/ipfs/bafybeihossdpesleq77dzptgtu23hfoayl4g73lvwjqxq65ngvzypz6rp4/country-data.json\"\ncountryData = await fetch(jsonURL).then(response => response.json())\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"viewof countrySelect = Inputs.select(Object.keys(countryData), {\n  label: \"Select Country:\"\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"abbrev = countryData[countrySelect].abbrev\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"incomingPlot = {\n  const sortedCountries = countryData[countrySelect].incoming.stats.source_countries\n        .sort((a, b) => b.count - a.count)\n        .map((d) => d.country);\n\n  const result = Plot.plot({\n    width: width,\n    height: width * (1/2),\n    marginLeft: 150,\n    style: {\n      fontSize: \"18px\"\n    },\n    x: {\n      grid: true,\n      ticks: 5\n    },\n    y: {\n      label: null,\n      domain: sortedCountries\n    },\n    marks: [\n      Plot.barX(\n        countryData[countrySelect].incoming.stats.source_countries, {\n        x: \"count\",\n        y: \"country\",\n        fill: \"#303d4e\",\n        tip: true\n      })\n    ]\n  })\n  return(result);\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"incomingOnlyPlot = {\n  const sortedCountries = countryData[countrySelect].incoming_only.stats.source_countries\n        .sort((a, b) => b.count - a.count)\n        .map((d) => d.country);\n\n  const result = Plot.plot({\n    width: width,\n    height: width * (1/2),\n    marginLeft: 150,\n    style: {\n      fontSize: \"18px\"\n    },\n    x: {\n      grid: true,\n      ticks: 5\n    },\n    y: {\n      label: null,\n      domain: sortedCountries\n    },\n    marks: [\n      Plot.barX(\n        countryData[countrySelect].incoming_only.stats.source_countries, {\n        x: \"count\",\n        y: \"country\",\n        fill: \"#303d4e\"\n      })\n    ]\n  })\n  return(result);\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"incomingAttacksPlot = {\n  const sortedCountries = countryData[countrySelect].incoming.stats.tags\n        .sort((a, b) => b.count - a.count)\n        .map((d) => d.tag);\n\n  const result = Plot.plot({\n    width: width,\n    height: width * (1/2),\n    marginLeft: 400,\n    style: {\n      fontSize: \"16px\"\n    },\n    x: {\n      grid: true,\n      ticks: 5\n    },\n    y: {\n      label: null,\n      domain: sortedCountries\n    },\n    marks: [\n      Plot.barX(\n        countryData[countrySelect].incoming.stats.tags, {\n        x: \"count\",\n        y: \"tag\",\n        fill: \"#303d4e\",\n        tip: true\n      })\n    ]\n  })\n  return(result);\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"incomingOnlyAttackPlot = {\n  const sortedCountries = countryData[countrySelect].incoming_only.stats.tags\n        .sort((a, b) => b.count - a.count)\n        .map((d) => d.tag);\n\n  const result = Plot.plot({\n    width: width,\n    height: width * (1/2),\n    marginLeft: 400,\n    style: {\n      fontSize: \"16px\"\n    },\n    x: {\n      grid: true,\n      ticks: 5\n    },\n    y: {\n      label: null,\n      domain: sortedCountries\n    },\n    marks: [\n      Plot.barX(\n        countryData[countrySelect].incoming_only.stats.tags, {\n        x: \"count\",\n        y: \"tag\",\n        fill: \"#303d4e\"\n      })\n    ]\n  })\n  return(result);\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"md`${d3.format(\",\")(countryData[countrySelect].incoming.count)}`\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"md`${d3.format(\",\")(countryData[countrySelect].incoming_only.count)}`\n"},{"methodName":"interpret","cellName":"ojs-cell-10","inline":false,"source":"md`${d3.format(\",\")(countryData[countrySelect].outgoing.count)}`\n"},{"methodName":"interpretQuiet","source":"shinyInput('countrySelect')"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Impzb25VUkwgPSBcImh0dHBzOi8vYmFmeWJlaWhvc3NkcGVzbGVxNzdkenB0Z3R1MjNoZm9heWw0ZzczbHZ3anF4cTY1bmd2enlwejZycDQuaXBmcy53M3MubGluay9pcGZzL2JhZnliZWlob3NzZHBlc2xlcTc3ZHpwdGd0dTIzaGZvYXlsNGc3M2x2d2pxeHE2NW5ndnp5cHo2cnA0L2NvdW50cnktZGF0YS5qc29uXCJcbmNvdW50cnlEYXRhID0gYXdhaXQgZmV0Y2goanNvblVSTCkudGhlbihyZXNwb25zZSA9PiByZXNwb25zZS5qc29uKCkpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgY291bnRyeVNlbGVjdCA9IElucHV0cy5zZWxlY3QoT2JqZWN0LmtleXMoY291bnRyeURhdGEpLCB7XG4gIGxhYmVsOiBcIlNlbGVjdCBDb3VudHJ5OlwiXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiYWJicmV2ID0gY291bnRyeURhdGFbY291bnRyeVNlbGVjdF0uYWJicmV2XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbmNvbWluZ1Bsb3QgPSB7XG4gIGNvbnN0IHNvcnRlZENvdW50cmllcyA9IGNvdW50cnlEYXRhW2NvdW50cnlTZWxlY3RdLmluY29taW5nLnN0YXRzLnNvdXJjZV9jb3VudHJpZXNcbiAgICAgICAgLnNvcnQoKGEsIGIpID0+IGIuY291bnQgLSBhLmNvdW50KVxuICAgICAgICAubWFwKChkKSA9PiBkLmNvdW50cnkpO1xuXG4gIGNvbnN0IHJlc3VsdCA9IFBsb3QucGxvdCh7XG4gICAgd2lkdGg6IHdpZHRoLFxuICAgIGhlaWdodDogd2lkdGggKiAoMS8yKSxcbiAgICBtYXJnaW5MZWZ0OiAxNTAsXG4gICAgc3R5bGU6IHtcbiAgICAgIGZvbnRTaXplOiBcIjE4cHhcIlxuICAgIH0sXG4gICAgeDoge1xuICAgICAgZ3JpZDogdHJ1ZSxcbiAgICAgIHRpY2tzOiA1XG4gICAgfSxcbiAgICB5OiB7XG4gICAgICBsYWJlbDogbnVsbCxcbiAgICAgIGRvbWFpbjogc29ydGVkQ291bnRyaWVzXG4gICAgfSxcbiAgICBtYXJrczogW1xuICAgICAgUGxvdC5iYXJYKFxuICAgICAgICBjb3VudHJ5RGF0YVtjb3VudHJ5U2VsZWN0XS5pbmNvbWluZy5zdGF0cy5zb3VyY2VfY291bnRyaWVzLCB7XG4gICAgICAgIHg6IFwiY291bnRcIixcbiAgICAgICAgeTogXCJjb3VudHJ5XCIsXG4gICAgICAgIGZpbGw6IFwiIzMwM2Q0ZVwiLFxuICAgICAgICB0aXA6IHRydWVcbiAgICAgIH0pXG4gICAgXVxuICB9KVxuICByZXR1cm4ocmVzdWx0KTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImluY29taW5nT25seVBsb3QgPSB7XG4gIGNvbnN0IHNvcnRlZENvdW50cmllcyA9IGNvdW50cnlEYXRhW2NvdW50cnlTZWxlY3RdLmluY29taW5nX29ubHkuc3RhdHMuc291cmNlX2NvdW50cmllc1xuICAgICAgICAuc29ydCgoYSwgYikgPT4gYi5jb3VudCAtIGEuY291bnQpXG4gICAgICAgIC5tYXAoKGQpID0+IGQuY291bnRyeSk7XG5cbiAgY29uc3QgcmVzdWx0ID0gUGxvdC5wbG90KHtcbiAgICB3aWR0aDogd2lkdGgsXG4gICAgaGVpZ2h0OiB3aWR0aCAqICgxLzIpLFxuICAgIG1hcmdpbkxlZnQ6IDE1MCxcbiAgICBzdHlsZToge1xuICAgICAgZm9udFNpemU6IFwiMThweFwiXG4gICAgfSxcbiAgICB4OiB7XG4gICAgICBncmlkOiB0cnVlLFxuICAgICAgdGlja3M6IDVcbiAgICB9LFxuICAgIHk6IHtcbiAgICAgIGxhYmVsOiBudWxsLFxuICAgICAgZG9tYWluOiBzb3J0ZWRDb3VudHJpZXNcbiAgICB9LFxuICAgIG1hcmtzOiBbXG4gICAgICBQbG90LmJhclgoXG4gICAgICAgIGNvdW50cnlEYXRhW2NvdW50cnlTZWxlY3RdLmluY29taW5nX29ubHkuc3RhdHMuc291cmNlX2NvdW50cmllcywge1xuICAgICAgICB4OiBcImNvdW50XCIsXG4gICAgICAgIHk6IFwiY291bnRyeVwiLFxuICAgICAgICBmaWxsOiBcIiMzMDNkNGVcIlxuICAgICAgfSlcbiAgICBdXG4gIH0pXG4gIHJldHVybihyZXN1bHQpO1xufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaW5jb21pbmdBdHRhY2tzUGxvdCA9IHtcbiAgY29uc3Qgc29ydGVkQ291bnRyaWVzID0gY291bnRyeURhdGFbY291bnRyeVNlbGVjdF0uaW5jb21pbmcuc3RhdHMudGFnc1xuICAgICAgICAuc29ydCgoYSwgYikgPT4gYi5jb3VudCAtIGEuY291bnQpXG4gICAgICAgIC5tYXAoKGQpID0+IGQudGFnKTtcblxuICBjb25zdCByZXN1bHQgPSBQbG90LnBsb3Qoe1xuICAgIHdpZHRoOiB3aWR0aCxcbiAgICBoZWlnaHQ6IHdpZHRoICogKDEvMiksXG4gICAgbWFyZ2luTGVmdDogNDAwLFxuICAgIHN0eWxlOiB7XG4gICAgICBmb250U2l6ZTogXCIxNnB4XCJcbiAgICB9LFxuICAgIHg6IHtcbiAgICAgIGdyaWQ6IHRydWUsXG4gICAgICB0aWNrczogNVxuICAgIH0sXG4gICAgeToge1xuICAgICAgbGFiZWw6IG51bGwsXG4gICAgICBkb21haW46IHNvcnRlZENvdW50cmllc1xuICAgIH0sXG4gICAgbWFya3M6IFtcbiAgICAgIFBsb3QuYmFyWChcbiAgICAgICAgY291bnRyeURhdGFbY291bnRyeVNlbGVjdF0uaW5jb21pbmcuc3RhdHMudGFncywge1xuICAgICAgICB4OiBcImNvdW50XCIsXG4gICAgICAgIHk6IFwidGFnXCIsXG4gICAgICAgIGZpbGw6IFwiIzMwM2Q0ZVwiLFxuICAgICAgICB0aXA6IHRydWVcbiAgICAgIH0pXG4gICAgXVxuICB9KVxuICByZXR1cm4ocmVzdWx0KTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImluY29taW5nT25seUF0dGFja1Bsb3QgPSB7XG4gIGNvbnN0IHNvcnRlZENvdW50cmllcyA9IGNvdW50cnlEYXRhW2NvdW50cnlTZWxlY3RdLmluY29taW5nX29ubHkuc3RhdHMudGFnc1xuICAgICAgICAuc29ydCgoYSwgYikgPT4gYi5jb3VudCAtIGEuY291bnQpXG4gICAgICAgIC5tYXAoKGQpID0+IGQudGFnKTtcblxuICBjb25zdCByZXN1bHQgPSBQbG90LnBsb3Qoe1xuICAgIHdpZHRoOiB3aWR0aCxcbiAgICBoZWlnaHQ6IHdpZHRoICogKDEvMiksXG4gICAgbWFyZ2luTGVmdDogNDAwLFxuICAgIHN0eWxlOiB7XG4gICAgICBmb250U2l6ZTogXCIxNnB4XCJcbiAgICB9LFxuICAgIHg6IHtcbiAgICAgIGdyaWQ6IHRydWUsXG4gICAgICB0aWNrczogNVxuICAgIH0sXG4gICAgeToge1xuICAgICAgbGFiZWw6IG51bGwsXG4gICAgICBkb21haW46IHNvcnRlZENvdW50cmllc1xuICAgIH0sXG4gICAgbWFya3M6IFtcbiAgICAgIFBsb3QuYmFyWChcbiAgICAgICAgY291bnRyeURhdGFbY291bnRyeVNlbGVjdF0uaW5jb21pbmdfb25seS5zdGF0cy50YWdzLCB7XG4gICAgICAgIHg6IFwiY291bnRcIixcbiAgICAgICAgeTogXCJ0YWdcIixcbiAgICAgICAgZmlsbDogXCIjMzAzZDRlXCJcbiAgICAgIH0pXG4gICAgXVxuICB9KVxuICByZXR1cm4ocmVzdWx0KTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Im1kYCR7ZDMuZm9ybWF0KFwiLFwiKShjb3VudHJ5RGF0YVtjb3VudHJ5U2VsZWN0XS5pbmNvbWluZy5jb3VudCl9YFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC05IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoibWRgJHtkMy5mb3JtYXQoXCIsXCIpKGNvdW50cnlEYXRhW2NvdW50cnlTZWxlY3RdLmluY29taW5nX29ubHkuY291bnQpfWBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtZGAke2QzLmZvcm1hdChcIixcIikoY291bnRyeURhdGFbY291bnRyeVNlbGVjdF0ub3V0Z29pbmcuY291bnQpfWBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnY291bnRyeVNlbGVjdCcpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -695,8 +711,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
         typesetMath(container);
         return container.innerHTML

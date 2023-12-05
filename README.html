@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.489">
+<meta name="generator" content="quarto-1.4.518">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Datadex – readme</title>
+<title>Datadex</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -226,7 +226,11 @@ Collaborate on Open Data using Open Source Tools
 <section id="docker-dev-containers" class="level3">
 <h3 class="anchored" data-anchor-id="docker-dev-containers">🐳 Docker / Dev Containers</h3>
 <p>The fastest way to start using Datadex is via <a href="https://code.visualstudio.com/docs/remote/containers">VSCode Remote Containers</a>. Once inside the develpment environment, you’ll only need to run <code>make dev</code> to spin up the <a href="http://127.0.0.1:3000">Dagster UI locally</a>.</p>
-<p><a href="https://codespaces.new/davidgasquez/datadex"><img src="https://github.com/codespaces/badge.svg" class="img-fluid"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://codespaces.new/davidgasquez/datadex"><img src="https://github.com/codespaces/badge.svg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
 <p>The development environment can also run in your browser thanks to GitHub Codespaces!</p>
 <p>You can also build the Docker image locally and run it with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> build</span>
@@ -412,8 +416,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
         typesetMath(container);
         return container.innerHTML
