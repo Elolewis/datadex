@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.518">
+<meta name="generator" content="quarto-1.4.525">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -125,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./docs"> <i class="bi bi-sun" role="img">
+    <a class="nav-link" href="./dbt/docs"> <i class="bi bi-sun" role="img">
 </i> 
 <span class="menu-text">dbt Docs</span></a>
   </li>  
@@ -190,7 +191,8 @@ Collaborate on Open Data using Open Source Tools
 <p><img alt="GitHub" src="https://img.shields.io/github/license/davidgasquez/datadex?style=flat-square"> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/datadex/ci.yml?style=flat-square"> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/davidgasquez/datadex?style=flat-square"></p>
 </div>
 <p><br></p>
-<p>Open source, serverless, and local-first Data Platform that makes it easy to collaborate on Open Data! Built on top of <a href="https://dagster.io/">Dagster</a>, <a href="https://www.getdbt.com/">dbt</a>, <a href="https://quarto.org/">Quarto</a>, and <a href="https://www.duckdb.org/">DuckDB</a>. You can check two instances of Datadex working in the following repositories:</p>
+<p>Open source, serverless, and local-first Data Platform to collaborate on Open Data! Built on top of <a href="https://dagster.io/">Dagster</a>, <a href="https://www.getdbt.com/">dbt</a>, <a href="https://quarto.org/">Quarto</a>, <a href="https://www.duckdb.org/">DuckDB</a>, and <a href="https://evidence.dev/">Evidence</a>.</p>
+<p>This repository is an up to date toy implementation of the overall pattern. You can check two real world production instances of Datadex working in the following repositories:</p>
 <ul>
 <li><a href="https://github.com/davidgasquez/gitcoin-grants-data-portal">Gitcoin Grants Data Portal</a>. Improve data access and empower data scientists to conduct research and guide community driven analysis and decisions around Gitcoin Grants.</li>
 <li><a href="https://github.com/davidgasquez/filecoin-data-portal/">Filecoin Data Portal</a>. Local-first data hub for Filecoin data! Like Dune, but in your laptop.</li>
@@ -198,11 +200,11 @@ Collaborate on Open Data using Open Source Tools
 <section id="principles" class="level3">
 <h3 class="anchored" data-anchor-id="principles">💡 Principles</h3>
 <ul>
-<li><strong>Open</strong>: Code and data are fully open. <a href="https://voltrondata.com/codex/a-new-frontier">Use open standards and share data in accesible formats</a>.</li>
-<li><strong>Modular</strong>: Each component can be replaced, extended, or removed. Works well in many environments (your laptop, in a cluster, or from the browser), and with multiple tools (thanks to the Arrow ecosystem).</li>
+<li><strong>Open</strong>: Code and data are fully open source.</li>
+<li><strong>Modular and Interoperable</strong>: Each component can be replaced, extended, or removed. Works well in many environments (your laptop, in a cluster, or from the browser), and with multiple tools (thanks to the Arrow ecosystem). <a href="https://voltrondata.com/codex/a-new-frontier">Use open standards and share data in accesible formats</a>.</li>
 <li><strong>Permissionless</strong>. Don’t ask, fork it and improve the models, add a new source or update any script. No API limits, just plain files.</li>
 <li><strong>Data as Code</strong>. Declarative stateless transformations tracked in <code>git</code>. Version your data as code! Publish and share your reusable models for others to build on top.</li>
-<li><strong>Modern</strong>: Supports types, tests, materialized views, and more.</li>
+<li><strong>Glue</strong>: Be a bridge between tools and aproaches. E.g: Use software engineering good practices like types, tests, materialized views, and more.</li>
 </ul>
 <p>Datadex is not a new tool. <strong>Datadex is a pattern showing an opinionated bridge between existing ones</strong>.</p>
 </section>
@@ -213,7 +215,7 @@ Collaborate on Open Data using Open Source Tools
 <li>Explore your data wherever you want. Use Jupyter Notebooks, BI Tools, Excel, …. <a href="https://davidgasquez.github.io/datadex/notebooks/2023-05-06-quarto.html">Share your findings with others</a> by publishing them online as beautiful static websites (thanks to Quarto).</li>
 <li>Add new data sources to the Datadex. The goal is simple; bring data locally and work with it!</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://user-images.githubusercontent.com/1682202/259458000-92984525-66bc-4410-8cb0-bd1b0cbfaf1d.png" class="img-fluid figure-img"></p>
 <figcaption>Dagster Asset_Group</figcaption>
@@ -226,15 +228,11 @@ Collaborate on Open Data using Open Source Tools
 <section id="docker-dev-containers" class="level3">
 <h3 class="anchored" data-anchor-id="docker-dev-containers">🐳 Docker / Dev Containers</h3>
 <p>The fastest way to start using Datadex is via <a href="https://code.visualstudio.com/docs/remote/containers">VSCode Remote Containers</a>. Once inside the develpment environment, you’ll only need to run <code>make dev</code> to spin up the <a href="http://127.0.0.1:3000">Dagster UI locally</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://codespaces.new/davidgasquez/datadex"><img src="https://github.com/codespaces/badge.svg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://codespaces.new/davidgasquez/datadex"><img src="https://github.com/codespaces/badge.svg" class="img-fluid"></a></p>
 <p>The development environment can also run in your browser thanks to GitHub Codespaces!</p>
-<p>You can also build the Docker image locally and run it with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> build</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> docker-run</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also build the <a href="Dockerfile">Dockerfile</a> image locally and run it with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> datadex .</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/workspaces/datadex <span class="at">-p</span> 3000:3000 datadex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="python-virtual-environment" class="level3">
 <h3 class="anchored" data-anchor-id="python-virtual-environment">🐍 Python Virtual Environment</h3>
