@@ -1,9 +1,9 @@
 [
   {
-    "listing": "/reports/index.html",
+    "listing": "/notebooks/index.html",
     "items": [
-      "/reports/2023-01-01-Datadex.html",
-      "/reports/2023-11-01-Observable.html"
+      "/notebooks/2023-01-01-Datadex.html",
+      "/notebooks/2023-11-01-Observable.html"
     ]
   }
 ]
