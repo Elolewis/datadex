@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-01-01">
+<meta name="description" content="Example Dashboard. This is a dashboard that uses DuckDB WASM to run queries from your browser.">
 
-<title>Datadex</title>
+<title>Datadex - Dashboard</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,6 +75,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="../site_libs/quarto-dashboard/stickythead.js"></script>
+<script src="../site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="../site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="../site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
+<script src="../site_libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="../site_libs/quarto-dashboard/components.js"></script>
+<link href="../site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,12 +110,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<style>html{ scroll-behavior: smooth; }</style>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="quarto-dashboard nav-fixed dashboard-fill fullcontent">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -136,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Knowledge Base</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../docs/tutorial.html" aria-current="page"> <i class="bi bi-journal" role="img">
+    <a class="nav-link" href="../docs/tutorial.html"> <i class="bi bi-journal" role="img">
 </i> 
 <span class="menu-text">Tutorial</span></a>
   </li>  
@@ -162,64 +174,146 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-</header>
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">       
+
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">Dashboard</a></div>
+        
+        
+      </div>
+    </div>
+</div>
+</nav>
+</header></header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content" id="quarto-document-content">
+
+<p>Example Dashboard. This is a dashboard that uses DuckDB WASM to run queries from your browser.</p>
+<div class="cell hidden bslib-grid-item html-fill-item">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="17" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 16;"><span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>energydb <span class="op">=</span> DuckDBClient<span class="op">.</span><span class="fu">of</span>({</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="dt">energy</span><span class="op">:</span> <span class="fu">FileAttachment</span>(<span class="st">"https://raw.githubusercontent.com/datonic/spain-energy-demand/main/data/spain-energy-demand.csv"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display hidden">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell bslib-card html-fill-container" data-title="Table" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title">Table</div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb2" data-startfrom="26" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 25;"><span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(energydb<span class="op">.</span><span class="fu">query</span>(<span class="st">"select * from energy order by datetime desc limit 10"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<div id="ojs-cell-2" data-nodetype="expression" class="html-fill-item html-fill-container">
+
+</div>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card bslib-card html-fill-container" data-title="Plotting 10 million flights" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title">Plotting 10 million flights</div></div>
+<div class="cell card-body html-fill-item html-fill-container" data-output="asis" data-title="Plotting 10 million flights">
+<div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb3" data-startfrom="33" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 32;"><span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>vg <span class="op">=</span> {</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> vg <span class="op">=</span> <span class="cf">await</span> <span class="im">import</span>(<span class="st">'https://cdn.jsdelivr.net/npm/@uwdata/vgplot/+esm'</span>)<span class="op">;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> wasm <span class="op">=</span> <span class="cf">await</span> vg<span class="op">.</span><span class="fu">wasmConnector</span>()<span class="op">;</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  vg<span class="op">.</span><span class="fu">coordinator</span>()<span class="op">.</span><span class="fu">databaseConnector</span>(wasm)<span class="op">;</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> vg<span class="op">;</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>viewof flights <span class="op">=</span> {</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="co">// load flights data from external parquet file</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="cf">await</span> vg<span class="op">.</span><span class="fu">coordinator</span>()<span class="op">.</span><span class="fu">exec</span>(<span class="vs">`CREATE TABLE IF NOT EXISTS flights10m AS</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="vs">    SELECT</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="vs">      GREATEST(-60, LEAST(ARR_DELAY, 180))::DOUBLE AS delay,</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="vs">      DISTANCE AS distance,</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="vs">      DEP_TIME AS time</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="vs">    FROM 'https://uwdata.github.io/mosaic-datasets/data/flights-10m.parquet'`</span>)<span class="op">;</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="co">// create a selection with crossfilter resolution</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> brush <span class="op">=</span> vg<span class="op">.</span><span class="at">Selection</span><span class="op">.</span><span class="fu">crossfilter</span>()<span class="op">;</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  <span class="co">// helper method to generate a binned plot filtered by brush</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>  <span class="co">// a plot contains a rectY mark for a histogram, as well as</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>  <span class="co">// an intervalX interactor to populate the brush selection</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> makePlot <span class="op">=</span> column <span class="kw">=&gt;</span> vg<span class="op">.</span><span class="fu">plot</span>(</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    vg<span class="op">.</span><span class="fu">rectY</span>(</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>      vg<span class="op">.</span><span class="fu">from</span>(<span class="st">"flights10m"</span><span class="op">,</span> { <span class="dt">filterBy</span><span class="op">:</span> brush })<span class="op">,</span> <span class="co">// data set and filter selection</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> vg<span class="op">.</span><span class="fu">bin</span>(column)<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> vg<span class="op">.</span><span class="fu">count</span>()<span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span><span class="op">,</span> <span class="dt">inset</span><span class="op">:</span> <span class="fl">0.5</span> }</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    vg<span class="op">.</span><span class="fu">intervalX</span>({ <span class="dt">as</span><span class="op">:</span> brush })<span class="op">,</span> <span class="co">// create an interval selection brush</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    vg<span class="op">.</span><span class="fu">xDomain</span>(vg<span class="op">.</span><span class="at">Fixed</span>)<span class="op">,</span> <span class="co">// don't change the x-axis domain across updates</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    vg<span class="op">.</span><span class="fu">marginLeft</span>(<span class="dv">75</span>)<span class="op">,</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    vg<span class="op">.</span><span class="fu">width</span>(<span class="dv">600</span>)<span class="op">,</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    vg<span class="op">.</span><span class="fu">height</span>(<span class="dv">200</span>)</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>  <span class="co">// generate dashboard with three linked histograms</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> vg<span class="op">.</span><span class="fu">vconcat</span>(</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">makePlot</span>(<span class="st">"delay"</span>)<span class="op">,</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">makePlot</span>(<span class="st">"time"</span>)<span class="op">,</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">makePlot</span>(<span class="st">"distance"</span>)</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container">
+<div id="ojs-cell-3-1" data-nodetype="declaration" class="html-fill-item html-fill-container">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container">
+<div id="ojs-cell-3-2" data-nodetype="declaration" class="html-fill-item html-fill-container">
+
+</div>
+</div>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="bslib-grid" style="display: grid; grid-template-columns: ;
+grid-auto-rows: minmax(0, 1fr);">
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
+
+</div>
+</div>
+</div>
 
 
-
-
-<section id="datadex-tutorial" class="level1">
-<h1>Datadex Tutorial</h1>
-<p>Let’s ingest and model some open data. We’ll cover all the basics to get you started with Datadex. If you’re not familiar with <a href="https://docs.getdbt.com/">dbt</a> or <a href="Dagster">Dagster</a>, I recommend you to check their tutorials to get a sense of how these tools work.</p>
-<section id="adding-data-sources" class="level2">
-<h2 class="anchored" data-anchor-id="adding-data-sources">📦 Adding Data Sources</h2>
-<p>The first thing is to add your desired dataset to Datadex. To do that, you’ll need to create a new Dagster Asset in <code>assets.py</code>. You’ll need to write a Python function that returns a DataFrame. You can do anything and read from anywhere as long as you return a DataFrame.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">@asset</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raw_owid_co2_data() <span class="op">-&gt;</span> pd.DataFrame:</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    co2_owid_url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.csv"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df.read_csv(co2_owid_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will make a new asset appear in the Dagster UI (available at <a href="http://127.0.0.1:3000/">localhost:3000</a> after running <code>make dev</code>). You can now select it and click “Materialize selected” to run the function and save the resulting DataFrame to our local DuckDB database.</p>
-<p>Once the asset is materialized, you can start querying it.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> datadex.utils <span class="im">import</span> query</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> query(<span class="st">"select count(*) from public.raw_owid_co2_data"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   count_star()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>         <span class="dv">50598</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="modeling-data" class="level2">
-<h2 class="anchored" data-anchor-id="modeling-data">📊 Modeling Data</h2>
-<p>Once the data is available in the local DuckDB database, you can start modeling it. You can continue using Dagster or switch to dbt. Let’s explore the dbt side now.</p>
-<p>We want to make dbt able to read the dataset Dagster materialized. To do that, we need to add a new table source to the <code>sources.yml</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sources</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> public</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> raw_owid_co2_data</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">meta</span><span class="kw">:</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">dagster</span><span class="kw">:</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">asset_key</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"raw_owid_co2_data"</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now we can create our SQL models referencing the source we just created. This is a simple query on <code>climate_owid_co2_by_country.sql</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> country, iso_code, <span class="dt">year</span>, co2 <span class="kw">from</span> {{ <span class="kw">source</span>(<span class="ot">"public"</span>, <span class="ot">"raw_owid_co2_data"</span>) }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To run this model, we need to refresh the Dagster definitions on <code>Reload definitions</code> and materialize the new <code>dbt</code> node. That will kick off a dbt run and materialize the resulting table as parquet files (due to the <code>external</code> materialization in the <code>dbt_project.yml</code> configuration).</p>
-</section>
-<section id="using-data" class="level2">
-<h2 class="anchored" data-anchor-id="using-data">📈 Using Data</h2>
-<p>Finally, we can use the data in a notebook. Let’s say we want to plot the CO2 emissions for a given country. We can use the <code>climate_owid_co2_by_country</code> table we just created:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datadex.utils <span class="im">import</span> query</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> query(<span class="st">"select * from climate_owid_co2_by_country where country = 'World'"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> df.plot(x<span class="op">=</span><span class="st">"year"</span>, y<span class="op">=</span><span class="st">"co2"</span>, kind<span class="op">=</span><span class="st">"line"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>That will plot the CO2 emissions for the whole world!</p>
-
-
-</section>
-</section>
-
-</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImVuZXJneWRiID0gRHVja0RCQ2xpZW50Lm9mKHtcbiAgZW5lcmd5OiBGaWxlQXR0YWNobWVudChcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9kYXRvbmljL3NwYWluLWVuZXJneS1kZW1hbmQvbWFpbi9kYXRhL3NwYWluLWVuZXJneS1kZW1hbmQuY3N2XCIpXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiSW5wdXRzLnRhYmxlKGVuZXJneWRiLnF1ZXJ5KFwic2VsZWN0ICogZnJvbSBlbmVyZ3kgb3JkZXIgYnkgZGF0ZXRpbWUgZGVzYyBsaW1pdCAxMFwiKSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZnID0ge1xuICBjb25zdCB2ZyA9IGF3YWl0IGltcG9ydCgnaHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L25wbS9AdXdkYXRhL3ZncGxvdC8rZXNtJyk7XG4gIGNvbnN0IHdhc20gPSBhd2FpdCB2Zy53YXNtQ29ubmVjdG9yKCk7XG4gIHZnLmNvb3JkaW5hdG9yKCkuZGF0YWJhc2VDb25uZWN0b3Iod2FzbSk7XG4gIHJldHVybiB2Zztcbn1cblxudmlld29mIGZsaWdodHMgPSB7XG4gIC8vIGxvYWQgZmxpZ2h0cyBkYXRhIGZyb20gZXh0ZXJuYWwgcGFycXVldCBmaWxlXG4gIGF3YWl0IHZnLmNvb3JkaW5hdG9yKCkuZXhlYyhgQ1JFQVRFIFRBQkxFIElGIE5PVCBFWElTVFMgZmxpZ2h0czEwbSBBU1xuICAgIFNFTEVDVFxuICAgICAgR1JFQVRFU1QoLTYwLCBMRUFTVChBUlJfREVMQVksIDE4MCkpOjpET1VCTEUgQVMgZGVsYXksXG4gICAgICBESVNUQU5DRSBBUyBkaXN0YW5jZSxcbiAgICAgIERFUF9USU1FIEFTIHRpbWVcbiAgICBGUk9NICdodHRwczovL3V3ZGF0YS5naXRodWIuaW8vbW9zYWljLWRhdGFzZXRzL2RhdGEvZmxpZ2h0cy0xMG0ucGFycXVldCdgKTtcblxuICAvLyBjcmVhdGUgYSBzZWxlY3Rpb24gd2l0aCBjcm9zc2ZpbHRlciByZXNvbHV0aW9uXG4gIGNvbnN0IGJydXNoID0gdmcuU2VsZWN0aW9uLmNyb3NzZmlsdGVyKCk7XG5cbiAgLy8gaGVscGVyIG1ldGhvZCB0byBnZW5lcmF0ZSBhIGJpbm5lZCBwbG90IGZpbHRlcmVkIGJ5IGJydXNoXG4gIC8vIGEgcGxvdCBjb250YWlucyBhIHJlY3RZIG1hcmsgZm9yIGEgaGlzdG9ncmFtLCBhcyB3ZWxsIGFzXG4gIC8vIGFuIGludGVydmFsWCBpbnRlcmFjdG9yIHRvIHBvcHVsYXRlIHRoZSBicnVzaCBzZWxlY3Rpb25cbiAgY29uc3QgbWFrZVBsb3QgPSBjb2x1bW4gPT4gdmcucGxvdChcbiAgICB2Zy5yZWN0WShcbiAgICAgIHZnLmZyb20oXCJmbGlnaHRzMTBtXCIsIHsgZmlsdGVyQnk6IGJydXNoIH0pLCAvLyBkYXRhIHNldCBhbmQgZmlsdGVyIHNlbGVjdGlvblxuICAgICAgeyB4OiB2Zy5iaW4oY29sdW1uKSwgeTogdmcuY291bnQoKSwgZmlsbDogXCJzdGVlbGJsdWVcIiwgaW5zZXQ6IDAuNSB9XG4gICAgKSxcbiAgICB2Zy5pbnRlcnZhbFgoeyBhczogYnJ1c2ggfSksIC8vIGNyZWF0ZSBhbiBpbnRlcnZhbCBzZWxlY3Rpb24gYnJ1c2hcbiAgICB2Zy54RG9tYWluKHZnLkZpeGVkKSwgLy8gZG9uJ3QgY2hhbmdlIHRoZSB4LWF4aXMgZG9tYWluIGFjcm9zcyB1cGRhdGVzXG4gICAgdmcubWFyZ2luTGVmdCg3NSksXG4gICAgdmcud2lkdGgoNjAwKSxcbiAgICB2Zy5oZWlnaHQoMjAwKVxuICApO1xuXG4gIC8vIGdlbmVyYXRlIGRhc2hib2FyZCB3aXRoIHRocmVlIGxpbmtlZCBoaXN0b2dyYW1zXG4gIHJldHVybiB2Zy52Y29uY2F0KFxuICAgIG1ha2VQbG90KFwiZGVsYXlcIiksXG4gICAgbWFrZVBsb3QoXCJ0aW1lXCIpLFxuICAgIG1ha2VQbG90KFwiZGlzdGFuY2VcIilcbiAgKTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnZmxpZ2h0cycpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../notebooks";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -615,15 +709,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Made with ❤️ by David Gasquez</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/davidgasquez/datadex/edit/main/docs/tutorial.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/davidgasquez/datadex/edit/main/notebooks/2024-01-01-Dashboard.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/davidgasquez/datadex/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
 
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
