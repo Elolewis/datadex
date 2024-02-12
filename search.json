@@ -28,11 +28,18 @@
     "text": "Finally, we can use the data in a notebook. Let’s say we want to plot the CO2 emissions for a given country. We can use the climate_owid_co2_by_country table we just created:\nfrom datadex.utils import query\n\ndf = query(\"select * from climate_owid_co2_by_country where country = 'World'\")\n_ = df.plot(x=\"year\", y=\"co2\", kind=\"line\")\nThat will plot the CO2 emissions for the whole world!"
   },
   {
-    "objectID": "notebooks/index.html",
-    "href": "notebooks/index.html",
-    "title": "Notebooks",
+    "objectID": "notebooks/2023-11-01-Observable.html",
+    "href": "notebooks/2023-11-01-Observable.html",
+    "title": "Observable Notebooks",
     "section": "",
-    "text": "Dashboard\n\n\n\n\n\nExample Dashboard. This is a dashboard that uses DuckDB WASM to run queries from your browser.\n\n\n\n\n\nJan 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nExample Report\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2023\n\n\nDavid Gasquez\n\n\n\n\n\n\n\n\n\n\n\n\nObservable Notebooks\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2023\n\n\nDavid Gasquez\n\n\n\n\n\n\nNo matching items"
+    "text": "Quarto is able to run Observable Notebooks. Observable is able to run DuckDB in the browser.\nLet’s showcase it!\nenergydb = DuckDBClient.of({\n  energy: FileAttachment(\"https://raw.githubusercontent.com/datonic/spain-energy-demand/main/data/spain-energy-demand.csv\")\n})\nInputs.table(energydb.query(\"select * from energy order by datetime desc limit 10\"))\nmonthly = energydb.sql`select date_part('month', datetime) as t, avg(value) / 1000 as v from energy group by 1 order by 1 desc`\n\nPlot.plot({\n  grid: true,\n  marks: [\n    Plot.lineY(monthly, {\n      x: \"t\",\n      y: \"v\"\n    }),\n    ]\n})\nVoila!"
+  },
+  {
+    "objectID": "notebooks/2023-11-01-Observable.html#plotting-10-million-flights",
+    "href": "notebooks/2023-11-01-Observable.html#plotting-10-million-flights",
+    "title": "Observable Notebooks",
+    "section": "Plotting 10 Million Flights",
+    "text": "Plotting 10 Million Flights\n\nvg = {\n  const vg = await import('https://cdn.jsdelivr.net/npm/@uwdata/vgplot/+esm');\n  const wasm = await vg.wasmConnector();\n  vg.coordinator().databaseConnector(wasm);\n  return vg;\n}\n\nviewof flights = {\n  // load flights data from external parquet file\n  await vg.coordinator().exec(`CREATE TABLE IF NOT EXISTS flights10m AS\n    SELECT\n      GREATEST(-60, LEAST(ARR_DELAY, 180))::DOUBLE AS delay,\n      DISTANCE AS distance,\n      DEP_TIME AS time\n    FROM 'https://uwdata.github.io/mosaic-datasets/data/flights-10m.parquet'`);\n\n  // create a selection with crossfilter resolution\n  const brush = vg.Selection.crossfilter();\n\n  // helper method to generate a binned plot filtered by brush\n  // a plot contains a rectY mark for a histogram, as well as\n  // an intervalX interactor to populate the brush selection\n  const makePlot = column =&gt; vg.plot(\n    vg.rectY(\n      vg.from(\"flights10m\", { filterBy: brush }), // data set and filter selection\n      { x: vg.bin(column), y: vg.count(), fill: \"steelblue\", inset: 0.5 }\n    ),\n    vg.intervalX({ as: brush }), // create an interval selection brush\n    vg.xDomain(vg.Fixed), // don't change the x-axis domain across updates\n    vg.marginLeft(75),\n    vg.width(600),\n    vg.height(200)\n  );\n\n  // generate dashboard with three linked histograms\n  return vg.vconcat(\n    makePlot(\"delay\"),\n    makePlot(\"time\"),\n    makePlot(\"distance\")\n  );\n}"
   },
   {
     "objectID": "notebooks/2023-01-01-Datadex.html",
@@ -70,18 +77,11 @@
     "text": "👏 Acknowledgements\n\nThis proof of concept was created thanks to open source projects like DuckDB, dbt, Dagster, and Quarto.\nDatadex name was inspired by Juan Benet’s data projects."
   },
   {
-    "objectID": "notebooks/2023-11-01-Observable.html",
-    "href": "notebooks/2023-11-01-Observable.html",
-    "title": "Observable Notebooks",
+    "objectID": "notebooks/index.html",
+    "href": "notebooks/index.html",
+    "title": "Notebooks",
     "section": "",
-    "text": "Quarto is able to run Observable Notebooks. Observable is able to run DuckDB in the browser.\nLet’s showcase it!\nenergydb = DuckDBClient.of({\n  energy: FileAttachment(\"https://raw.githubusercontent.com/datonic/spain-energy-demand/main/data/spain-energy-demand.csv\")\n})\nInputs.table(energydb.query(\"select * from energy order by datetime desc limit 10\"))\nmonthly = energydb.sql`select date_part('month', datetime) as t, avg(value) / 1000 as v from energy group by 1 order by 1 desc`\n\nPlot.plot({\n  grid: true,\n  marks: [\n    Plot.lineY(monthly, {\n      x: \"t\",\n      y: \"v\"\n    }),\n    ]\n})\nVoila!"
-  },
-  {
-    "objectID": "notebooks/2023-11-01-Observable.html#plotting-10-million-flights",
-    "href": "notebooks/2023-11-01-Observable.html#plotting-10-million-flights",
-    "title": "Observable Notebooks",
-    "section": "Plotting 10 Million Flights",
-    "text": "Plotting 10 Million Flights\n\nvg = {\n  const vg = await import('https://cdn.jsdelivr.net/npm/@uwdata/vgplot/+esm');\n  const wasm = await vg.wasmConnector();\n  vg.coordinator().databaseConnector(wasm);\n  return vg;\n}\n\nviewof flights = {\n  // load flights data from external parquet file\n  await vg.coordinator().exec(`CREATE TABLE IF NOT EXISTS flights10m AS\n    SELECT\n      GREATEST(-60, LEAST(ARR_DELAY, 180))::DOUBLE AS delay,\n      DISTANCE AS distance,\n      DEP_TIME AS time\n    FROM 'https://uwdata.github.io/mosaic-datasets/data/flights-10m.parquet'`);\n\n  // create a selection with crossfilter resolution\n  const brush = vg.Selection.crossfilter();\n\n  // helper method to generate a binned plot filtered by brush\n  // a plot contains a rectY mark for a histogram, as well as\n  // an intervalX interactor to populate the brush selection\n  const makePlot = column =&gt; vg.plot(\n    vg.rectY(\n      vg.from(\"flights10m\", { filterBy: brush }), // data set and filter selection\n      { x: vg.bin(column), y: vg.count(), fill: \"steelblue\", inset: 0.5 }\n    ),\n    vg.intervalX({ as: brush }), // create an interval selection brush\n    vg.xDomain(vg.Fixed), // don't change the x-axis domain across updates\n    vg.marginLeft(75),\n    vg.width(600),\n    vg.height(200)\n  );\n\n  // generate dashboard with three linked histograms\n  return vg.vconcat(\n    makePlot(\"delay\"),\n    makePlot(\"time\"),\n    makePlot(\"distance\")\n  );\n}"
+    "text": "Dashboard\n\n\n\n\n\nExample Dashboard. This is a dashboard that uses DuckDB WASM to run queries from your browser.\n\n\n\n\n\nJan 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nExample Report\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2023\n\n\nDavid Gasquez\n\n\n\n\n\n\n\n\n\n\n\n\nObservable Notebooks\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2023\n\n\nDavid Gasquez\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
