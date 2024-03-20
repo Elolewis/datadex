@@ -3,7 +3,7 @@ default:
     dev:
       type: duckdb
       path: "../data/local.duckdb"
-      threads: 8
+      threads: 4
       settings:
         enable_object_cache: true
         enable_http_metadata_cache: true
